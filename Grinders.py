@@ -1,6 +1,4 @@
-import discord
-from discord.ext import commands
-from discord import app_commands
+
 import os
 from flask import Flask
 from threading import Thread
@@ -20,6 +18,44 @@ from datetime import datetime
 import difflib
 import re
 import datetime
+import discord
+from discord.ext import commands, tasks
+import os
+from flask import Flask
+from threading import Thread
+import logging
+from discord import app_commands
+import json
+import random
+import asyncio
+from datetime import datetime, timedelta
+from PIL import Image, ImageDraw, ImageFont
+import io
+import math
+import subprocess
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+import discord
+from discord.ext import commands
+import asyncio  # Ensure asyncio is imported
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+from playwright.async_api import async_playwright
+import re
+import hashlib
+import aiohttp
+from urllib.parse import urlencode
+from http.cookiejar import CookieJar
+from discord.ui import View, Button, Modal, TextInput
+import pymongo
+import gspread
+from discord import Embed, Interaction
+from pymongo import MongoClient, ReturnDocument
+from collections import defaultdict
+
 # Define intents
 intents = discord.Intents.default()
 intents.message_content = True
@@ -1287,12 +1323,12 @@ mongo_uri = os.getenv("MONGO_URI")  # You should set this in your Railway enviro
 client = MongoClient(mongo_uri)
 
 # Choose your database
-db = client['MongoDB']  # Replace with the name of your database
+db = client['MongoDB-grinders']  # Replace with the name of your database
 
 # Access collections (equivalent to Firestore collections)
-wallets_collection = db['wallets']
-orders_collection = db['orders']
-counters_collection = db["order_counters"]  # New collection to track order ID
+wallets_collection = db['wallets-grinders']
+orders_collection = db['orders-grinders']
+counters_collection = db["order_counters-grinders"]  # New collection to track order ID
 
 # The fixed orders posting channel
 ORDERS_CHANNEL_ID = 1416771302554992700
