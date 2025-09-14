@@ -1323,7 +1323,7 @@ mongo_uri = os.getenv("MONGO_URI")  # You should set this in your Railway enviro
 client = MongoClient(mongo_uri)
 
 # Choose your database
-db = client['MongoDB-grinders']  # Replace with the name of your database
+db = client['MongoDB']  # Replace with the name of your database
 
 # Access collections (equivalent to Firestore collections)
 wallets_collection = db['wallets-grinders']
