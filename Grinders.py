@@ -224,7 +224,7 @@ async def feedback(ctx):
 
         async def on_submit(self, interaction: Interaction):
             review = self.children[0].value
-            stars_text = "<:christmas_star:1262138383963259031>" * self.stars  # Custom emoji for rating
+            stars_text = "✨" * self.stars  # Custom emoji for rating
 
             # Create the embed with a polished structure
             embed = Embed(
