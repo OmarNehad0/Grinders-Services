@@ -776,7 +776,7 @@ async def b(ctx, *, boss_name_with_multiplier: str):
         discount_multiplier = 1 - (discount_percent / 100)
 
         embed = discord.Embed(
-            title=f"**<🛡 {boss['name']}**",
+            title=f"**<{boss['name']}**",
             description=boss.get("caption", ""),
             color=discord.Color.from_rgb(139, 0, 0)
         )
@@ -815,7 +815,7 @@ async def b(ctx, *, boss_name_with_multiplier: str):
             field_value += f"\n**Value in $:** ${total_usd:.2f} <:Bitcoin:1416768698672349355>"
 
             emoji = boss.get("emoji", "🦄")
-            embed.add_field(name=f"{emoji} {item['name']}", value=field_value, inline=False)
+            embed.add_field(name=f"{item['name']}", value=field_value, inline=False)
 
         await ctx.send(embed=embed)
 
