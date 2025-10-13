@@ -201,7 +201,7 @@ async def feedback(ctx):
                 self.add_item(Button(
                     label=f"{stars}",  # Keep the label simple
                     custom_id=str(stars),
-                    emoji="<:christmas_star:1262138383963259031>",  # Add emoji separately
+                    emoji="✨",  # Add emoji separately
                     style=discord.ButtonStyle.primary
                 ))
             # Add the vouch button on a new row
