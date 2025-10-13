@@ -531,7 +531,7 @@ class KillCountModal(Modal):
 
             # Create an embed with the boss details and calculations
             embed = discord.Embed(
-                title=f"**🛡 {boss['name']}**",
+                title=f"**{boss['name']}**",
                 description=boss.get("caption", "No description available."),
                 color=discord.Color.from_rgb(139, 0, 0)
             )
