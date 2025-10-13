@@ -254,7 +254,7 @@ async def feedback(ctx):
         title="📝 Vouch For Us!",
         color = discord.Color.from_rgb(200, 0, 0), #red color
         description=(
-        "**<:wolf:1261406634802941994> We Appreciate Your Vouch on [Sythe](https://www.sythe.org/threads/www-sythe-org-threads-cynx-osrs-service-vouch-thread/page-6#post-85913828).** \n\n"
+        "**💫 We Appreciate Your Vouch on [Sythe](https://www.sythe.org/threads/www-sythe-org-threads-cynx-osrs-service-vouch-thread/page-6#post-85913828).** \n\n"
         "**Please select your rating below (1-5 stars).**\n"
         "Once Selected, You Will Be Asked To Leave A Review."
         )
