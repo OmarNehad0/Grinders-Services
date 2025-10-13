@@ -2015,7 +2015,7 @@ async def set_order(interaction: Interaction, customer: discord.Member, value: i
         "channel_id": original_channel.id,
         "original_channel_id": original_channel_id,
         "description": description,
-        "image": image  # Store image in database
+        "image": image, # Store image in database
         "posted_by": interaction.user.id  # ✅ store who used /post
     })
 
