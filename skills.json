@@ -2,7 +2,7 @@
   {
     "name": "Agility",
     "icon": "https://oldschool.runescape.wiki/images/8/86/Agility_icon.png?389e0",
-    "emoji": "1062158947659808929",
+    "emoji": "1416767224944791623",
     "aliases": [
       "agility",
       "agil"
@@ -75,7 +75,7 @@
   {
     "name": "Construction",
     "icon": "https://oldschool.runescape.wiki/images/f/f6/Construction_icon.png?f9bf7",
-    "emoji": "1062157451710959696",
+    "emoji": "1416767231752405022",
     "aliases": [
       "construction",
       "con"
@@ -133,7 +133,7 @@
   {
     "name": "Cooking",
     "icon": "https://oldschool.runescape.wiki/images/d/dc/Cooking_icon.png?a0156",
-    "emoji": "1062157458233118831",
+    "emoji": "1416767234642022502",
     "aliases": [
       "cooking",
       "cook"
@@ -166,7 +166,7 @@
   {
     "name": "Crafting",
     "icon": "https://oldschool.runescape.wiki/images/c/cf/Crafting_icon.png?a1f71",
-    "emoji": "1062157462670675988",
+    "emoji": "1427393086723723274",
     "aliases": [
       "crafting",
       "craft"
@@ -208,7 +208,7 @@
   {
     "name": "Farming",
     "icon": "https://oldschool.runescape.wiki/images/f/fc/Farming_icon.png?558fa",
-    "emoji": "1062157480265797723",
+    "emoji": "1416767241298641086",
     "aliases": [
       "farming",
       "farm"
@@ -251,7 +251,7 @@
   {
     "name": "Firemaking",
     "icon": "https://oldschool.runescape.wiki/images/9/9b/Firemaking_icon.png?45ea0",
-    "emoji": "1062157428688425070",
+    "emoji": "1416767244033200148",
     "aliases": [
       "firemaking",
       "fm"
@@ -284,7 +284,7 @@
   {
     "name": "Fishing",
     "icon": "https://oldschool.runescape.wiki/images/3/3b/Fishing_icon.png?15a98",
-    "emoji": "1062157453938147439",
+    "emoji": "1416767246247923862",
     "aliases": [
       "fishing",
       "fish"
@@ -335,7 +335,7 @@
   {
     "name": "Fletching",
     "icon": "https://oldschool.runescape.wiki/images/9/93/Fletching_icon.png?15cda",
-    "emoji": "1062157469134098552",
+    "emoji": "1416767248487682068",
     "aliases": [
       "fletching",
       "fletch"
@@ -369,7 +369,7 @@
   {
     "name": "Herblore",
     "icon": "https://oldschool.runescape.wiki/images/0/03/Herblore_icon.png?ffa9e",
-    "emoji": "1062157442261196880",
+    "emoji": "1416767250580639835",
     "aliases": [
       "herblore",
       "herb"
@@ -407,7 +407,7 @@
   {
     "name": "Hunter",
     "icon": "https://oldschool.runescape.wiki/images/d/dd/Hunter_icon.png?8762f",
-    "emoji": "1062157475719168071",
+    "emoji": "1416767255827451924",
     "aliases": [
       "hunter",
       "hunt",
@@ -476,7 +476,7 @@
   {
     "name": "Magic",
     "icon": "https://oldschool.runescape.wiki/images/5/5c/Magic_icon.png?334cf",
-    "emoji": "1062157407284899851",
+    "emoji": "1416767257928925284",
     "aliases": [
       "magic",
       "mage"
@@ -551,7 +551,7 @@
   {
     "name": "Melee",
     "icon": "https://oldschool.runescape.wiki/images/Melee.png?0a53d",
-    "emoji": "1062157413802848306",
+    "emoji": "1416767237045616690",
     "aliases": [
       "melee",
       "mains",
@@ -623,7 +623,7 @@
   {
     "name": "Mining",
     "icon": "https://oldschool.runescape.wiki/images/4/4a/Mining_icon.png?00870",
-    "emoji": "1062157484741115994",
+    "emoji": "1416767259933671474",
     "aliases": [
       "mining",
       ""
@@ -661,7 +661,7 @@
   {
     "name": "Prayer",
     "icon": "https://oldschool.runescape.wiki/images/f/f2/Prayer_icon.png?ca0dc",
-    "emoji": "1062157438029135972",
+    "emoji": "1416767262215503922",
     "aliases": [
       "prayer",
       "pray"
@@ -699,7 +699,7 @@
   {
     "name": "Ranged",
     "icon": "https://oldschool.runescape.wiki/images/1/19/Ranged_icon.png?01b0e",
-    "emoji": "1062157424225681598",
+    "emoji": "1416767266946547753",
     "aliases": [
       "ranged",
       "range",
@@ -760,7 +760,7 @@
   {
     "name": "Runecrafting",
     "icon": "https://oldschool.runescape.wiki/images/6/63/Runecraft_icon.png?c278c",
-    "emoji": "1062157473353568328",
+    "emoji": "1427394966841327616",
     "aliases": [
       "runecrafting",
       "runecraft",
@@ -814,7 +814,7 @@
   {
     "name": "Slayer",
     "icon": "https://oldschool.runescape.wiki/images/2/28/Slayer_icon.png?cd34f",
-    "emoji": "1062157511198769234",
+    "emoji": "1427395279124041908",
     "aliases": [
       "slayer",
       "slay"
@@ -842,7 +842,7 @@
   {
     "name": "Smithing",
     "icon": "https://oldschool.runescape.wiki/images/d/dd/Smithing_icon.png?d26c5",
-    "emoji": "1062157446736527420",
+    "emoji": "1427396834933997679",
     "aliases": [
       "smithing",
       "smith"
@@ -875,7 +875,7 @@
   {
     "name": "Thieving",
     "icon": "https://oldschool.runescape.wiki/images/4/4a/Thieving_icon.png?973fe",
-    "emoji": "1062157420362743929",
+    "emoji": "1427396846623527003",
     "aliases": [
       "thieving",
       "thief"
@@ -928,7 +928,7 @@
   {
     "name": "Woodcutting",
     "icon": "https://oldschool.runescape.wiki/images/f/f4/Woodcutting_icon.png?6ead4",
-    "emoji": "1062157489036079124",
+    "emoji": "1427396855066787870",
     "aliases": [
       "woodcutting",
       "woodcut",
