@@ -2052,9 +2052,9 @@ async def complete(interaction: Interaction, order_id: int):
     update_wallet(str(order["customer"]), "spent", order["value"])
     
     total_value = order["value"]
-    worker_payment = round(total_value * 0.85, 1)
-    commission_value = round(total_value * 0.10, 1)
-    helper_payment = round(total_value * 0.05, 1)
+    worker_payment = round(total_value * 0.8, 1)
+    commission_value = round(total_value * 0.175, 1)
+    helper_payment = round(total_value * 0.025, 1)
 
     update_wallet(str(order["worker"]), "wallet", float(worker_payment))
     update_wallet("server", "commission", float(commission_value))
