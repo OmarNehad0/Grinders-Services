@@ -14,7 +14,6 @@ logging.basicConfig(level=logging.DEBUG)
 import aiohttp
 import math
 from discord import Interaction, Embed
-from datetime import datetime
 import difflib
 import re
 import datetime
@@ -33,22 +32,13 @@ from PIL import Image, ImageDraw, ImageFont
 import io
 import math
 import subprocess
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import time
 import discord
 from discord.ext import commands
 import asyncio  # Ensure asyncio is imported
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
-from playwright.async_api import async_playwright
 import re
 import hashlib
 import aiohttp
-from urllib.parse import urlencode
-from http.cookiejar import CookieJar
 from discord.ui import View, Button, Modal, TextInput
 import pymongo
 import gspread
@@ -56,7 +46,6 @@ from discord import Embed, Interaction
 from pymongo import MongoClient, ReturnDocument
 from collections import defaultdict
 from datetime import datetime
-
 # Define intents
 intents = discord.Intents.default()
 intents.message_content = True
@@ -615,7 +604,7 @@ async def log_interaction(user, selected_boss, json_file, kill_count=None):
                     f"**Action Taken:** Selected boss **{selected_boss}**.\n"
                     f"**JSON File:** `{json_file.replace('.json', '')}`",
         color=discord.Color.from_rgb(0, 102, 204),  # Blue theme for professionalism
-        timestamp=datetime.datetime.utcnow()  # Timestamp for when the log was created
+        timestamp= datetime.utcnow()  # Timestamp for when the log was created
     )
 
     # Add some extra details about the user’s action
