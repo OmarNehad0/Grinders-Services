@@ -567,7 +567,7 @@ class KillCountModal(Modal):
 
                 field_value += f"\n**Value in $:** ${price_to_usd(total_price_after_discount):.2f} <:Bitcoin:1416768698672349355>"
                 emoji = boss.get("emoji", "🦄")  # Emoji for the boss (default to 🔨 if not found)
-                embed.add_field(name=f"{emoji} {item['name']}", value=f"{field_value}", inline=False)
+                embed.add_field(name=f"{item['name']}", value=f"{field_value}", inline=False)
 
                 if "image" in item and item["image"]:
                     embed.set_thumbnail(url=item["image"])
