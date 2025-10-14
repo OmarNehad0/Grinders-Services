@@ -1500,7 +1500,7 @@ async def check_and_assign_roles(user: discord.Member, spent_value: int, client)
     }
 
     # Fetch the correct channel
-    congrats_channel = client.get_channel(1210687108457701468)  # Ensure it's the correct ID
+    congrats_channel = client.get_channel(1427563029679050795)  # Ensure it's the correct ID
     if congrats_channel is None:
         try:
             congrats_channel = await client.fetch_channel(1210687108457701468)  
@@ -1539,7 +1539,7 @@ async def check_and_assign_roles(user: discord.Member, spent_value: int, client)
             embed.set_thumbnail(url=user.avatar.url if user.avatar else user.default_avatar.url)
             embed.add_field(name="🏅 New Role Earned:", value=f"{role.mention}", inline=False)
             embed.set_footer(text="Keep spending to reach new Lifetime Rank! ✨", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=" )
-            embed.set_author(name="✅ Cynx System ✅", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+            embed.set_author(name="✅ Grinders System ✅", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
             await congrats_channel.send(embed=embed)
 
 
@@ -1737,7 +1737,7 @@ class OrderButton(View):
             return
 
         # ✅ Send application notification and store the message object
-        bot_spam_channel = bot.get_channel(1345349082608041996)
+        bot_spam_channel = bot.get_channel(1427439073538343155)
         if bot_spam_channel:
             embed = discord.Embed(title="📌 Job Application Received", color=discord.Color.from_rgb(139, 0, 0))
             embed.add_field(name="👷 Applicant", value=interaction.user.mention, inline=True)
