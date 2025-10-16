@@ -238,8 +238,8 @@ async def feedback(ctx):
                 )
             )
             embed.set_author(name=f"{interaction.user.name} left a vouch!", icon_url=interaction.user.display_avatar.url)
-            embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
-            embed.set_footer(text="Thank you for your feedback!", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+            embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
+            embed.set_footer(text="Thank you for your feedback!", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
 
             feedback_channel = bot.get_channel(FEEDBACK_CHANNEL_ID)
             if feedback_channel:
@@ -260,8 +260,8 @@ async def feedback(ctx):
         )
     )
     initial_embed.set_author(name=ctx.author.name, icon_url=ctx.author.display_avatar.url)
-    initial_embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
-    initial_embed.set_footer(text="Grinders Services", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+    initial_embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
+    initial_embed.set_footer(text="Grinders Services", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
 
     # Send the embed with rating buttons
     view = FeedbackView()
@@ -276,84 +276,14 @@ async def feedback(ctx):
 
 # Payment methods with custom emojis and addresses
 payment_methods_with_emojis = {
-    "Bitcoin +1%": ("1D398RDWnEW4DRYeQ3DKSmbzT1sMuM1xgW", "<:bitcoinbtclogo:1210395515133362316>"),
-    "USDT (TRC20) +1%": ("TXfZyGJ7Jbx94uD8vzdFoEFfcS7heJDZBW", "<:R5:1210457644394086421>"),
-    "Eth (Erc20) +1%" : ("0x40a6190110d3f1d8a7936eb0de3287b1d88921dc" , "<:R5:1210457644394086421>"),
+    "Bitcoin +1%": ("15kkY79cKZgu6yto64tykAQRNNW9EvDop5", "<:bitcoinbtclogo:1210395515133362316>"),
+    "USDT (TRC20) +1%": ("TL9o93JwxMmKtRgQQcqvrmzC5JoUJMF5Cn", "<:R5:1210457644394086421>"),
+    "USDT (Erc20) +1%" : ("0x6da8d7c0c661ae8a214efe261c57e7a52cfd506b" , "<:R5:1210457644394086421>"),
+     "Ethereum  ETH +1%" : ("0x6da8d7c0c661ae8a214efe261c57e7a52cfd506b" , "<:R5:1210457644394086421>"),
+    "Usdt  Solana +1%" : ("Ax9qM8JCd7G74o7g4vEnDk3aNyQCqfVUeb3QD5dn7hAk" , "<:R5:1210457644394086421>"),
     "Binance to Binance & USDT +2%" : ("461848277", "<:OIP2:1210456498929532948>"),
-    "LiteCoin +1%" :("LQ3yQWMstLTenNRWbFiwiNXkua4PoKdrZY" ,"<:1490823:1210457048987467796>"),
-    "Ada (Cardano) +1%" : ("addr1v92xngktp696jnpav2vjyps2a5hqzdpxkfdlqd98ed4hgscsy74a2", "<:cardanocrypto48047104002423:1210458255411642378>"),
-    
-    # Payment Methods Requiring Additional Notes
-    "Venmo +15%" : ("@Aspayops22", "<:29806venmo:1340476900010885120>"),
-    "Zelle +15%" : ("908-922-9027", "<:7079zelle:1340476895732699268>"),
-    "Apple Pay +15%" : ("908-922-9027", "<:25515applepay:1340476897930252308>"),
-    "Cash App +20%" : ("$vincentzhou1", "<:55778cashapp:1340476905870327840>"),
-    "E-Transfer +20%" : ("willhu14@gmail.com", "<:Paymentsiconbyback1design11:1322349373295820881>"),
-    "Wise +15%" : ("AUTONOMOUS SOLUTIONS LLC", "<:images2:1362712820038500474>"),
-    "Revoult +15%" : ("@ishmaeyld", "<:Revolut:1362720533980119113>"),
-    "Chime +15%" : ("$thatkidsmh25", "<:unnamed:1362721113746047006>")
-}
-
-# Payment Notes (for specific payment methods)
-special_payment_methods = [
-    "Venmo +15%", "Zelle +15%", "Apple Pay +15%", 
-    "Cash App +20%", "E-Transfer +20%", "Wise +15%", "Revoult +15%","Chime +15%"
-]
-
-specific_notes_by_method = {
-    "Cash App +20%": (
-        "**__Cash App Instructions__**\n"
-        "➤ **ID verification required** for payments over $100 USD.\n"
-        "➤ Payment must come directly from **Cash App balance**.\n"
-        "➤ No bank/credit/debit card payments.\n"
-        "➤ **Confirmation might take longer** than other methods."
-    ),
-    "Chime +15%": (
-        "<:unnamed:1362721113746047006> **__Chime Instructions__** <:unnamed:1362721113746047006>\n"
-        "**Availability:** 💫 **```9AM - 10PM CST```**\n"
-        "➤ **Log in to the Chime app or website.**\n"
-        "➤ **Enter $thatkidsmh25 as the recipient (email or phone).**.\n"
-        "➤ **Enter the payment amount.**\n**Choose your Chime Spending account.**\n\n**In the note section, add your Discord name and server (Discord name + Server name)**\n"
-        "➤ **Review and confirm the payment.**\n\n**Send it and share your receipt.**"
-    ),
-    "Venmo +15%": (
-        "<:29806venmo:1340476900010885120> **__Venmo Instructions__** <:29806venmo:1340476900010885120>\n\n"
-        "**Availability:** 💫 **```9AM - 10PM CST```**\n"
-        "➤ **Step 1: ✅**\nBefore Sending Payment: Activate Your Venmo Card Tap Card\n→ Sign up for Venmo Debit Card\n→ Follow steps to activate.\nAdd Funds to Your Venmo Balance Tap Me\n→ Add Money → Deposit funds into your account.\n\n"
-        "➤ **Step 2: ✅**\nMoney must be sent from **account balance**, not card or bank.\nAdd your Discord name + server in the description.\n Example: @Bobby22 - Discord Name Select Venmo Balance and tap Pay.\n\n"
-        "➤ <:1209685252553842737:1362706498312077504> **Important:**\nDo NOT select payment protection—funds will be held for 21 days before a refund is possible.\n Payments NOT made from Venmo Balance will be refunded.\n **Provide a screenshot of the completed payment.**"
-    ),
-    "Zelle +15%": (
-        "<:7079zelle:1340476895732699268> **__Zelle Instructions__** <:7079zelle:1340476895732699268>\n\n"
-        "**Availability:** 💫 **```9AM - 10PM CST```**\n"
-        "➤ **Zelle info:**\n\nZelle Number:\n**```908-922-9027```**\nName:\n**```AUTONOMOUS SOLUTIONS LLC```**\n"
-        "➤ <:1209685252553842737:1362706498312077504> **Please before send**\n➤ Add your Discord name or order number AND server name to the message.\n➤ Then send and share your receipt."
-    ),
-    "Apple Pay +15%": (
-        "<:25515applepay:1340476897930252308> **__Apple Pay Instructions__** <:25515applepay:1340476897930252308>\n\n"
-        "**Availability:** 💫 **```9AM - 10PM CST```**\n"
-        "➤ **❓ Step-by-step:**\n\n**1**. Launch iMessage on your device.\n**2**. Enter recipient number, 908-922-9027.\n**3**. Click the '+' icon and select the ApplePay method.\n**4**. Choose how much you wanna send, add your Discord name or order number AND server name to the message.\n**5**. Tap Send and share your receipt."
-    ),
-    "E-Transfer +20%": (
-        "**__E-Transfer Instructions__**\n\n"
-        "➤ Only for Canadian customers.\n"
-        "➤ Use exact email provided.\n"
-        "➤ May require ID for high-value transfers."
-    ),
-    "Wise +15%": (
-        "<:images2:1362712820038500474> **__Wise Instructions__** <:images2:1362712820038500474>\n\n"
-        "**Availability:** 💫 **```9AM - 10PM CST```**\n"
-        "**Payement Link:** [Pay Wise](https://wise.com/pay/business/autonomoussolutionsllc) \n\n"
-        "**Account Holder:** 🕵️‍♂️ **```AUTONOMOUS SOLUTIONS LLC```**"
-        "➤ Send via **Wise balance only**.\n"
-        "➤ No external card/bank payments.\n"
-        "➤ **Transaction limit of 500€, DO NOT send more**."
-    ),
-    "Revoult +15%": (
-        "<:Revolut:1362720533980119113> **__Revolut Instructions__** <:Revolut:1362720533980119113>\n\n"
-        "**Availability:** 💫 **```9AM - 10PM CST```**\n**➔ Bank Transfer**\n**➔ Debit Card**\n**➔ Google Pay**\n**➔ iDeal**\n\n"
-        "➤ **❓ Step-by-step:**\n**Here's how to send payments using the Revolut App:**\n**1. Launch the App on your device;**\n**2. Select your currency (Dollars or Euros) and tap on the button labeled Add Money;**\n**3. Select the payment method you want to use to fund your account;**\n**4. Once your funds are available, tap on the center button with two arrows;**\n**5. In the search bar at the top, type the recipient's tag `@ishmaeyld`;**\n**6. Fill the note with your personal information (Discord name + Server name);**\n**7. Once you find it, tap the Send button located on the bottom right corner;**\n**8. Choose how much you wanna send, add your Discord name or order number on notes;**\n**9. Send it and share your receipt**"
-    )
+    "LiteCoin +1%" :("Lhc4XBb75aEGYmYYq4ZqejXDW4TtsrYhpz" ,"<:1490823:1210457048987467796>"),
+    "Solana (Sol)" : ("Ax9qM8JCd7G74o7g4vEnDk3aNyQCqfVUeb3QD5dn7hAk", "<:OIP2:1428501558068252874>")
 }
 
 
@@ -574,9 +504,9 @@ class KillCountModal(Modal):
 
             embed.set_footer(
                 text="Grinders Bot",
-                icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&="  # Footer with thumbnail-style icon
+                icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&="  # Footer with thumbnail-style icon
             )
-            embed.set_author(name="Boss Calculator", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+            embed.set_author(name="Boss Calculator", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
             await interaction.response.send_message(embed=embed, ephemeral=True)
         except ValueError:
             await interaction.response.send_message("Please provide a valid number.", ephemeral=True)
@@ -620,9 +550,9 @@ async def log_interaction(user, selected_boss, json_file, kill_count=None):
     # Add a footer with a professional touch
     embed.set_footer(
         text="Logged by Omar Bot",
-        icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&="
+        icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&="
     )  # Custom footer icon with timestamp
-    embed.set_author(name="Omar Bot Logging", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+    embed.set_author(name="Omar Bot Logging", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
 
     # Check if the boss has any associated image
     if "image" in boss and boss["image"]:
@@ -677,7 +607,7 @@ class BossSelectView(View):
 @bot.command()
 async def start(ctx):
     # Direct URL to the banner image
-    banner_gif_url = "https://i.postimg.cc/7Y1BvxWN/server-banner2.gif"
+    banner_gif_url = "https://i.postimg.cc/VkgDLqGf/06287b359e873799c131a81bd1995edb.gif"
     await ctx.send(banner_gif_url)
     import io
     ticket_link = "https://discord.com/channels/1208792946401615893/1208792946883690550"
@@ -795,9 +725,9 @@ async def b(ctx, *, boss_name_with_multiplier: str):
 
         embed.set_footer(
             text="Grinders Bot",
-            icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&="  # Footer with thumbnail-style icon
+            icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&="  # Footer with thumbnail-style icon
         )
-        embed.set_author(name="Boss Calculator", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+        embed.set_author(name="Boss Calculator", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
         for item in boss["items"]:
             original_price_per_kill = item["price"]
             total_price = original_price_per_kill * multiplier
@@ -960,18 +890,18 @@ async def quest_calculator(ctx, *, quests: str):
         color=discord.Color.from_rgb(139, 0, 0)
     )
     embed.set_thumbnail(
-        url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&="
+        url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&="
     )
     embed.set_footer(
         text="Grinders Bot",
-        icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&="
+        icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&="
     )
     embed.set_author(
         name="Grinders Services",
-        icon_url='https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&='
+        icon_url='https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&='
     )
     embed.set_image(
-        url="https://i.postimg.cc/KjSKxhHP/banner-cynx.gif"
+        url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&="
     )
 
     if discount_percent > 0:
@@ -1144,12 +1074,12 @@ async def s(ctx, skill_name: str, levels: str):
         embed.add_field(name="**__End Level__**", value=f"**```{level_end}```**", inline=True)
         embed.add_field(name="**__Discount__**", value=f"**```{discount_percent}%```**", inline=True)
 
-        embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+        embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
         embed.set_footer(
             text="Grinders Staff",
-            icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&="
+            icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&="
         )
-        embed.set_author(name="Grinders Services", icon_url='https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=')
+        embed.set_author(name="Grinders Services", icon_url='https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=')
         # Add total cost
         embed.add_field(
             name=f"**__~Using the cheapest methods available~__**",
@@ -1428,7 +1358,7 @@ async def wallet(interaction: discord.Interaction, user: discord.Member = None):
     spent_value = wallet_data.get('spent', 0)
 
     # Get user's avatar (fallback to default image)
-    default_thumbnail = "https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&="
+    default_thumbnail = "https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&="
     thumbnail_url = user.avatar.url if user.avatar else default_thumbnail
 
     # Create embed message
@@ -1437,7 +1367,7 @@ async def wallet(interaction: discord.Interaction, user: discord.Member = None):
     embed.add_field(name="Deposit", value=f"```💳 {deposit_value}M```", inline=False)
     embed.add_field(name="Wallet", value=f"```💵 {wallet_value}M```", inline=False)
     embed.add_field(name="Spent", value=f"```📝 {spent_value}M```", inline=False)
-    embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif?ex=67bf2b6b&is=67bdd9eb&hm=ac2c065a9b39c3526624f939f4af2b1457abb29bfb8d56a6f2ab3eafdb2bb467&=")
+    embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
 
     # Ensure requester avatar exists
     requester_avatar = interaction.user.avatar.url if interaction.user.avatar else default_thumbnail
@@ -1491,19 +1421,19 @@ async def check_and_assign_roles(user: discord.Member, spent_value: int, client)
     Sends a congrats message in the announcement channel.
     """
     role_milestones = {
-        1: 1212554296294514768,  # 1M+
-        4000: 1210262407994413176,  # 4M+
-        5000: 1210262187638132806,  # 5M+
-        7000: 1210090197845282908,  # 7M+
-        9000: 1210088939919118336,  # 9M+
-        14000: 1209962980179968010  # 14M+
+        1: 1415717369837256895,  # 1M+
+        3000: 1428502084264656916,  # 4M+
+        6000: 1428502182017372180,  # 5M+
+        10000: 1428502267501219980,  # 7M+
+        13000: 1428502364129595504,  # 9M+
+        16000: 1428502480505016381  # 14M+
     }
 
     # Fetch the correct channel
     congrats_channel = client.get_channel(1427563029679050795)  # Ensure it's the correct ID
     if congrats_channel is None:
         try:
-            congrats_channel = await client.fetch_channel(1210687108457701468)  
+            congrats_channel = await client.fetch_channel(1427563029679050795)  
             print(f"[DEBUG] Successfully fetched channel: {congrats_channel.name} ({congrats_channel.id})")
         except discord.NotFound:
             print("[ERROR] Channel not found in API!")
@@ -1538,8 +1468,8 @@ async def check_and_assign_roles(user: discord.Member, spent_value: int, client)
             )
             embed.set_thumbnail(url=user.avatar.url if user.avatar else user.default_avatar.url)
             embed.add_field(name="🏅 New Role Earned:", value=f"{role.mention}", inline=False)
-            embed.set_footer(text="Keep spending to reach new Lifetime Rank! ✨", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=" )
-            embed.set_author(name="✅ Grinders System ✅", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+            embed.set_footer(text="Keep spending to reach new Lifetime Rank! ✨", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=" )
+            embed.set_author(name="✅ Grinders System ✅", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
             await congrats_channel.send(embed=embed)
 
 
@@ -1585,7 +1515,7 @@ async def wallet_add_remove(interaction: discord.Interaction, user: discord.Memb
     embed.add_field(name="Deposit", value=f"```💳 {deposit_value:,}M```", inline=False)
     embed.add_field(name="Wallet", value=f"```💵 {wallet_value:,}M```", inline=False)
     embed.add_field(name="Spent", value=f"```📝 {spent_value:,}M```", inline=False)
-    embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif?ex=67bf2b6b&is=67bdd9eb&hm=ac2c065a9b39c3526624f939f4af2b1457abb29bfb8d56a6f2ab3eafdb2bb467&=")
+    embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
     embed.set_footer(text=f"Requested by {interaction.user.display_name}", icon_url=interaction.user.avatar.url)
     
     await interaction.response.send_message(f"✅ {action.capitalize()}ed {value:,}M.", embed=embed)
@@ -1634,7 +1564,7 @@ async def deposit(interaction: discord.Interaction, user: discord.Member, action
     embed.add_field(name="Wallet", value=wallet_value, inline=False)
     embed.add_field(name="Spent", value=spent_value, inline=False)
     embed.set_footer(text=f"Requested by {interaction.user.display_name}", icon_url=interaction.user.avatar.url)
-    embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif?ex=67bf2b6b&is=67bdd9eb&hm=ac2c065a9b39c3526624f939f4af2b1457abb29bfb8d56a6f2ab3eafdb2bb467&=")
+    embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
     # Send response
     await interaction.response.send_message(f"✅ {action.capitalize()}ed deposit value for {user.name} by {value:,}M.", embed=embed)
     await log_command(interaction, "Deposit Set/Remove", f"User: {user.mention} (`{user.id}`)\nAction: {action.capitalize()}\nAmount: {value:,}M")
@@ -1682,7 +1612,7 @@ async def tip(interaction: discord.Interaction, user: discord.Member, value: int
     sender_embed.add_field(name="Wallet", value=sender_wallet_value, inline=False)
     sender_embed.add_field(name="Spent", value=sender_spent, inline=False)
     sender_embed.set_footer(text=f"Tip sent to {user.display_name}", icon_url=user.avatar.url)
-    sender_embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif?ex=67c3c8ab&is=67c2772b&hm=bb9222e70e1ddc5d63f9c5c4452b9499a07cbab1d0c501fcf4cc6e8a060d736d&=")
+    sender_embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
     # Recipient's wallet embed
     recipient_embed = discord.Embed(title=f"{user.display_name}'s Updated Wallet 💳", color=discord.Color.from_rgb(139, 0, 0))
     recipient_embed.set_thumbnail(url=user.avatar.url if user.avatar else user.default_avatar.url)
@@ -1690,7 +1620,7 @@ async def tip(interaction: discord.Interaction, user: discord.Member, value: int
     recipient_embed.add_field(name="Wallet", value=recipient_wallet_value, inline=False)
     recipient_embed.add_field(name="Spent", value=recipient_spent, inline=False)
     recipient_embed.set_footer(text=f"Tip received from {interaction.user.display_name}", icon_url=interaction.user.avatar.url)
-    recipient_embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif?ex=67bf2b6b&is=67bdd9eb&hm=ac2c065a9b39c3526624f939f4af2b1457abb29bfb8d56a6f2ab3eafdb2bb467&=")
+    recipient_embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
     # Send the tip message publicly
     await interaction.response.send_message(tip_message)
 
@@ -1803,16 +1733,16 @@ class ApplicationView(View):
 
             # ✅ Corrected embed with actual order details
             embed = discord.Embed(title="👷‍♂️ Order Claimed", color=discord.Color.from_rgb(139, 0, 0))
-            embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
-            embed.set_author(name="✅ Grinders System ✅", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+            embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
+            embed.set_author(name="✅ Grinders System ✅", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
             embed.add_field(name="📕 Description", value=description, inline=False)
             embed.add_field(name="👷 Worker", value=f"<@{self.applicant_id}>", inline=True)
             embed.add_field(name="📌 Customer", value=f"<@{self.customer_id}>", inline=True)
             embed.add_field(name="💵 Deposit Required", value=f"**```{deposit_required}M```**", inline=True)
             embed.add_field(name="💰 Order Value", value=f"**```{value}M```**", inline=True)
             embed.add_field(name="🆔 Order ID", value=self.order_id, inline=True)
-            embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif")
-            embed.set_footer(text="Grinders System", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+            embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
+            embed.set_footer(text="Grinders System", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
             sent_message = await original_channel.send(embed=embed)
             await sent_message.pin()
 
@@ -1903,7 +1833,7 @@ async def post(interaction: discord.Interaction, customer: discord.Member, value
     post_channel_id = interaction.channel.id  # Store the channel where /post was used
 
     # Define role IDs
-    role1_id = 1208792946401615901
+    role1_id = 1428503211332862033
     role2_id = 1208792946401615902
 
     # Check if roles exist in the guild
@@ -1919,8 +1849,8 @@ async def post(interaction: discord.Interaction, customer: discord.Member, value
         role_ping = None  # No roles found, so no ping
 
     embed = discord.Embed(title="💎 New Order 💎", color=discord.Color.from_rgb(139, 0, 0))
-    embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
-    embed.set_author(name="💼 Order Posted", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+    embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
+    embed.set_author(name="💼 Order Posted", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
     embed.description = f"📕**Description:**\n {description}"
     embed.add_field(name="💰 Value", value=f"**```{value}M```**", inline=True)
     embed.add_field(name="💵 Deposit Required", value=f"**```{deposit_required}M```**", inline=True)
@@ -1928,8 +1858,8 @@ async def post(interaction: discord.Interaction, customer: discord.Member, value
     if image:
         embed.set_image(url=image)
     else:
-        embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif")
-    embed.set_footer(text=f"Order ID: {order_id}", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+        embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
+    embed.set_footer(text=f"Order ID: {order_id}", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
 
     channel_to_post = interaction.guild.get_channel(channel_id)
     if channel_to_post:
@@ -1982,7 +1912,7 @@ async def set_order(interaction: Interaction, customer: discord.Member, value: i
     original_channel_id = interaction.channel.id
 
     embed = Embed(title="Order Set", color=discord.Color.from_rgb(139, 0, 0))
-    embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+    embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
     embed.set_author(name="🛠️ Order Set", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
     embed.description = f"📕**Description:**\n {description}"
     embed.add_field(name="📌 Customer", value=customer.mention, inline=True)
@@ -1994,9 +1924,9 @@ async def set_order(interaction: Interaction, customer: discord.Member, value: i
     if image:
         embed.set_image(url=image)
     else:
-        embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif?ex=67bf2b6b&is=67bdd9eb&hm=ac2c065a9b39c3526624f939f4af2b1457abb29bfb8d56a6f2ab3eafdb2bb467&=")
+        embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
 
-    embed.set_footer(text=f"📜 Order ID: {order_id}", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+    embed.set_footer(text=f"📜 Order ID: {order_id}", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
 
     original_channel = bot.get_channel(original_channel_id)
     if original_channel:
@@ -2076,8 +2006,8 @@ async def complete(interaction: Interaction, order_id: int):
     original_channel = bot.get_channel(order["original_channel_id"])
     if original_channel:
         embed = Embed(title="✅ Order Completed", color=discord.Color.from_rgb(139, 0, 0))
-        embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
-        embed.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+        embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
+        embed.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
         embed.add_field(name="📕 Description", value=order.get("description", "No description provided."), inline=False)
         embed.add_field(name="👷 Worker", value=f"<@{order['worker']}>", inline=True)
         embed.add_field(name="📌 Customer", value=f"<@{order['customer']}>", inline=True)
@@ -2085,8 +2015,8 @@ async def complete(interaction: Interaction, order_id: int):
         embed.add_field(name="👷‍♂️ Worker Payment", value=f"**```{worker_payment}M```**", inline=True)
         embed.add_field(name="📦 Server Commission", value=f"**```{commission_value}M```**", inline=True)
         embed.add_field(name="📬 Helper Reward", value=f"**```{helper_payment}M```**", inline=True)
-        embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif?ex=67bf2b6b&is=67bdd9eb&hm=ac2c065a9b39c3526624f939f4af2b1457abb29bfb8d56a6f2ab3eafdb2bb467&=")
-        embed.set_footer(text=f"📜 Order ID: {order_id}", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+        embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
+        embed.set_footer(text=f"📜 Order ID: {order_id}", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
         await original_channel.send(embed=embed)
     
     # NEW: security embed (small, loud, mentions customer inside)
@@ -2101,9 +2031,9 @@ async def complete(interaction: Interaction, order_id: int):
             ),
             color=discord.Color.gold()
         )
-        security.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")                 # same image as thumbnail
-        security.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")  # author icon = thumb
-        security.set_footer(text="Grinders System • Please confirm once done", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")  # footer icon = thumb
+        security.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")                 # same image as thumbnail
+        security.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")  # author icon = thumb
+        security.set_footer(text="Grinders System • Please confirm once done", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")  # footer icon = thumb
         security.add_field(
             name="⚠️ Action Required",
             value="**This is for your safety. Please confirm here once changed.**",
@@ -2116,13 +2046,13 @@ async def complete(interaction: Interaction, order_id: int):
     worker = bot.get_user(order["worker"])
     if worker:
         dm_embed = Embed(title="✅ Order Completed", color=discord.Color.from_rgb(139, 0, 0))
-        dm_embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
-        dm_embed.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+        dm_embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
+        dm_embed.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
         dm_embed.add_field(name="📕 Description", value=order.get("description", "No description provided."), inline=False)
         dm_embed.add_field(name="💰 Value", value=f"**```{order['value']}M```**", inline=True)
         dm_embed.add_field(name="👷‍♂️ Your Payment", value=f"**```{worker_payment}M```**", inline=True)
-        dm_embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif")
-        dm_embed.set_footer(text=f"📜 Order ID: {order_id}", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+        dm_embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
+        dm_embed.set_footer(text=f"📜 Order ID: {order_id}", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
         try:
             await worker.send(embed=dm_embed)
         except discord.Forbidden:
@@ -2134,12 +2064,12 @@ async def complete(interaction: Interaction, order_id: int):
 
     if helper_channel:
         helper_embed = Embed(title="🎯 Helper Commission Summary", color=discord.Color.gold())
-        helper_embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif")
-        helper_embed.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif")
+        helper_embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
+        helper_embed.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
         helper_embed.add_field(name="📜 Order ID", value=f"`{order_id}`", inline=True)
         helper_embed.add_field(name="💰 Order Value", value=f"**```{order['value']}M```**", inline=True)
         helper_embed.add_field(name="🎁 Your Share", value=f"**```{helper_payment}M```**", inline=True)
-        helper_embed.set_footer(text=f"Grinders System", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif")
+        helper_embed.set_footer(text=f"Grinders System", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
         try:
             await helper_channel.send(f"<@{helper_id}>", embed=helper_embed)
         except Exception as e:
@@ -2193,7 +2123,7 @@ async def order_deletion(interaction: Interaction, order_id: int):
 @bot.tree.command(name="view_order", description="View details of an order")
 async def view_order(interaction: discord.Interaction, order_id: int):
     # Required role IDs
-    allowed_roles = {1208792946401615900, 1208792946430836736, 1211406868480532571}
+    allowed_roles = {1414948197142495283, 1415051454489825331, 1414948529469653083}
 
     # Check if user has at least one of the required roles
     if not any(role.id in allowed_roles for role in interaction.user.roles):
@@ -2220,7 +2150,7 @@ async def view_order(interaction: discord.Interaction, order_id: int):
 
     embed = discord.Embed(title="📦 Order Details", color=discord.Color.from_rgb(139, 0, 0))
     embed.add_field(name="📊 Status", value=status, inline=False)
-    embed.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+    embed.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
     embed.add_field(name="👷 Worker", value=f"<@{worker_id}>" if isinstance(worker_id, int) else worker_id, inline=False)
     embed.add_field(name="📌 Customer", value=f"<@{customer_id}>" if isinstance(customer_id, int) else customer_id, inline=False)
     embed.add_field(name="🎟️ Holder", value=f"<@{holder_id}>" if isinstance(holder_id, int) else holder_id, inline=False)
@@ -2228,8 +2158,8 @@ async def view_order(interaction: discord.Interaction, order_id: int):
     embed.add_field(name="💵 Deposit", value=f"**```{deposit}M```**", inline=True)
     embed.add_field(name="💰 Order Value", value=f"**```{value}M```**", inline=True)
     embed.add_field(name="🆔 Order ID", value=order_id, inline=False)
-    embed.set_image(url="https://media.discordapp.net/attachments/985890908027367474/1258798457318019153/Cynx_banner.gif?ex=67bf2b6b&is=67bdd9eb&hm=ac2c065a9b39c3526624f939f4af2b1457abb29bfb8d56a6f2ab3eafdb2bb467&=")
-    embed.set_thumbnail(url="https://media.discordapp.net/attachments/1208792947232079955/1376855814735921212/discord_with_services_avatar.gif?ex=6836d866&is=683586e6&hm=c818d597519f4b2e55c77aeae4affbf0397e12591743e1069582f605c125f80c&=")
+    embed.set_image(url="https://media.discordapp.net/attachments/1387923748585476236/1428484018042568855/banner.gif?ex=68f2aae9&is=68f15969&hm=16996c02588ace6aa6989483bfec30c2e95f567321b86fcea7da89ad93d19d6f&=")
+    embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
     await interaction.response.send_message(embed=embed)
 
 
