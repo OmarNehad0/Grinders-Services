@@ -54,7 +54,7 @@
       "items": [
         {
           "name": "Barrows Brothers",
-          "price": 1000000,
+          "price": 900000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Dharok_the_Wretched.png/38px-Dharok_the_Wretched.png?33092"
         }],
           "emoji" : "<:38pxAhrim_the_Blighted:1321210153311146015>"
@@ -116,12 +116,12 @@
       "items": [
         {
           "name": "Demonic Gorillas - High Gears",
-          "price": 750000,
+          "price": 600000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Demonic_gorilla.png/260px-Demonic_gorilla.png?5f457"
         },
         {
           "name": "Demonic Gorillas - Low Gears",
-          "price": 1000000,
+          "price": 750000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Demonic_gorilla.png/260px-Demonic_gorilla.png?5f457"
         }
                ],
@@ -136,12 +136,12 @@
       "items": [
         {
           "name": "Giant Mole - w/Falador Hard Diary",
-          "price": 450000,
+          "price": 300000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Giant_Mole_%28Christmas%29.png/280px-Giant_Mole_%28Christmas%29.png?5c1e2"
         },
         {
           "name": "Giant Mole - w/out Falador Hard Diary",
-          "price": 600000,
+          "price": 400000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Giant_Mole_%28Christmas%29.png/280px-Giant_Mole_%28Christmas%29.png?5c1e2"
         }
                ],
@@ -156,12 +156,12 @@
       "items": [
         {
           "name": "Grotesque Guardians - w/Dragon Darts",
-          "price": 600000,
+          "price": 800000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Midnight_%28follower%29.png/200px-Midnight_%28follower%29.png?e4ec7"
         },
         {
           "name": "Grotesque Guardians - w/out Dragon Darts",
-          "price": 700000,
+          "price": 900000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Midnight_%28follower%29.png/200px-Midnight_%28follower%29.png?e4ec7"
         }
                ],
@@ -226,22 +226,22 @@
       "items": [
         {
           "name": "Phosani's Nightmare - Scythe",
-          "price": 7000000,
+          "price": 4500000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Phosani%27s_Nightmare_%28Christmas%29.png/250px-Phosani%27s_Nightmare_%28Christmas%29.png?10ebd"
         },
         {
           "name": "Phosani's Nightmare - Inquisitor's Mace",
-          "price": 9000000,
+          "price": 550000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Phosani%27s_Nightmare_%28Christmas%29.png/250px-Phosani%27s_Nightmare_%28Christmas%29.png?10ebd"
         },
         {
           "name": "Phosani's Nightmare - Bludgeon",
-          "price": 10000000,
+          "price": 7000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Phosani%27s_Nightmare_%28Christmas%29.png/250px-Phosani%27s_Nightmare_%28Christmas%29.png?10ebd"
         },
         {
           "name": "Phosani's Nightmare - Scythe - Tele Unlocked",
-          "price": 7000000,
+          "price": 5000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Phosani%27s_Nightmare_%28Christmas%29.png/250px-Phosani%27s_Nightmare_%28Christmas%29.png?10ebd"
         }
                ],
@@ -271,22 +271,22 @@
       "items": [
         {
           "name":"Shamans - w/ Blowpipe",
-          "price": 350000,
+          "price": 150000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Dragon_warhammer_detail.png/120px-Dragon_warhammer_detail.png?7f65a"
         },
         {
           "name": "Shamans - w/ Blowpipe/Cannon",
-          "price": 250000,
+          "price": 120000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Dragon_warhammer_detail.png/120px-Dragon_warhammer_detail.png?7f65a"
         },
         {
           "name": "Shamans - w/ MSB",
-          "price": 550000,
+          "price": 200000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Dragon_warhammer_detail.png/120px-Dragon_warhammer_detail.png?7f65a"
         },
         {
           "name": "Shamans - w/ MSB/Cannon",
-          "price": 450000,
+          "price": 17000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Dragon_warhammer_detail.png/120px-Dragon_warhammer_detail.png?7f65a"
         }
                ],
@@ -376,7 +376,7 @@
       "items": [
         {
           "name": "Zalcano",
-          "price": 500000,
+          "price": 300000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Zalcano.png/200px-Zalcano.png?6244d"
         }
                ],
@@ -423,3 +423,4 @@
           "emoji" : "<:250pxZulrah_serpentine:1222390176563859547>"
         }
   ]
+
