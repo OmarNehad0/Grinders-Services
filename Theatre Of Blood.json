@@ -9,12 +9,12 @@
       "items": [
         {
           "name": "Login - With Scythe",
-          "price": 17000000,
+          "price": 12000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Lil%27_Zik.png/1024px-Lil%27_Zik.png?5a023"
         },
         {
           "name": "Login - With Whip",
-          "price": 20000000,
+          "price": 15000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Lil%27_Zik.png/1024px-Lil%27_Zik.png?5a023"
         }
       ],
@@ -34,7 +34,7 @@
         },
         {
           "name": "Hard Mode (Login) - Without Scythe",
-          "price": 35000000,
+          "price": 40000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Lil%27_Zik.png/1024px-Lil%27_Zik.png?5a023"
         }
       ],
