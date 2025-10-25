@@ -6,17 +6,17 @@
         "items": [
             {
                 "name": "90+ Range + Rigour",
-                "price": 13000000,
+                "price": 15000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Fire_cape_detail.png/800px-Fire_cape_detail.png?f1d08"
             },
             {
                 "name": "80+ Range + Rigour",
-                "price": 18000000,
+                "price": 12000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Fire_cape_detail.png/800px-Fire_cape_detail.png?f1d08"
             },
             {
                 "name": "75+ Range + Rigour",
-                "price": 24000000,
+                "price": 30000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Fire_cape_detail.png/800px-Fire_cape_detail.png?f1d08"
             }
         ],
@@ -57,22 +57,22 @@
         "items": [
             {
                 "name": "85-99 Range",
-                "price": 30000000,
+                "price": 35000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Fire_cape_detail.png/800px-Fire_cape_detail.png?f1d08"
             },
             {
                 "name": "75-84 Range",
-                "price": 40000000,
+                "price": 50000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Fire_cape_detail.png/800px-Fire_cape_detail.png?f1d08"
             },
             {
                 "name": "71-74 Range",
-                "price": 60000000,
+                "price": 70000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Fire_cape_detail.png/800px-Fire_cape_detail.png?f1d08"
             },
             {
                 "name": "61-70 Range",
-                "price": 80000000,
+                "price": 95000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Fire_cape_detail.png/800px-Fire_cape_detail.png?f1d08"
             }
         ],
@@ -207,4 +207,5 @@
                "emoji" : "<:150pxFire_cape_detail:1321173086183100539>"
     }
 ]
+
 
