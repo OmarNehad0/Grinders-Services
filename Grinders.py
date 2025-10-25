@@ -2163,6 +2163,169 @@ async def view_order(interaction: discord.Interaction, order_id: int):
     await interaction.response.send_message(embed=embed)
 
 
+# JSON Files Mapping
+json_files = {
+    "minigames.json": "🎲",
+    "diaries.json": "📘"
+}
+
+# Function to Load JSON Data
+def load_json(file_name):
+    try:
+        with open(file_name, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Error: {file_name} not found.")  # Debugging log
+        return []
+
+def format_price(price):
+    """Converts price to a formatted string with K/M/GP while handling string inputs safely."""
+    try:
+        price = float(price)  # Ensure price is a number
+    except (ValueError, TypeError):
+        return "N/A 🪙"  # If conversion fails, return default
+    
+    if price >= 1_000_000:
+        return f"{price / 1_000_000:.2f}M GP"
+    elif price >= 1_000:
+        return f"{price / 1_000:.2f}K GP"
+    else:
+        return f"{int(price)} GP"
+
+
+
+def find_category(category_name, file_name):
+    """Finds the category inside the correct JSON file."""
+    data = load_json(file_name)
+    print(f"Searching for '{category_name}' in {file_name}")
+
+    for category in data:
+        print(f"Checking category: {category['name']} (Aliases: {category.get('aliases', [])})")
+        if category_name.lower() == category["name"].lower() or category_name.lower() in category.get("aliases", []):
+            print(f"Match found: {category['name']}")
+            return category
+
+    print(f"No match found for {category_name}")
+    return None  # If not found
+
+
+async def select_callback(interaction: discord.Interaction):
+    selected_value = interaction.data['values'][0]  # Get selected value from dropdown
+    print(f"Dropdown selected: {selected_value}")  # Debugging log
+
+    # Extract file_name and item_name
+    try:
+        file_name, item_name = selected_value.split("|", 1)
+    except ValueError:
+        await interaction.response.send_message("Error: Invalid selection format.", ephemeral=True)
+        return
+
+    if not file_name or not item_name:
+        await interaction.response.send_message("Error: Category or item missing.", ephemeral=True)
+        return
+
+    category_data = find_category(item_name, file_name)
+
+    if not category_data:
+        await interaction.response.send_message("Error: Item not found.", ephemeral=True)
+        return
+
+    print(f"Category Data: {category_data}")  # Debugging log
+
+    # Embed setup
+    embed = discord.Embed(
+        title=f"{category_data.get('emoji', '')} {category_data['name']}",
+        description=category_data.get("caption", "No description provided"),
+        color=discord.Color.blue()
+    )
+
+    # Special case for skills.json
+    if file_name == "skills.json" and "methods" in category_data:
+        methods_list = "\n".join([
+            f"• **{method['title']}**: {method['gpxp']} GP/XP (Req: {method['req']})"
+            for method in category_data["methods"]
+        ])
+        embed.add_field(name="Training Methods", value=methods_list, inline=False)
+    elif "items" in category_data:
+        items_list = "\n".join([
+            f"• **{item['name']}**: {format_price(item.get('price', 0))}"
+            for item in category_data["items"]
+        ])
+        embed.add_field(name="Available Options", value=items_list, inline=False)
+    else:
+        embed.add_field(name="Available Options", value="No items found.", inline=False)
+
+    embed.set_thumbnail(url=category_data.get("image", THUMBNAIL_URL))
+    embed.set_author(name="Heaven Services", icon_url=AUTHOR_ICON_URL)
+    embed.set_footer(text="Heaven Services", icon_url=AUTHOR_ICON_URL)
+
+    await interaction.response.send_message(embed=embed, ephemeral=True)
+
+@bot.command()
+async def dropdown(ctx):
+    banner_url = "https://media.discordapp.net/attachments/1332341372333723732/1332806835375308811/demo1.gif"
+    ticket_link = "https://discord.com/channels/520905245174267908/1327419108366487634"
+    voucher_link = "https://www.sythe.org/threads/heaven-services-vouch-thread/"
+
+    # Send Banner Before Dropdowns
+    banner_embed = discord.Embed()
+    banner_embed.set_image(url=banner_url)
+    await ctx.send(embed=banner_embed)
+
+    views = []  # Store dropdown views
+
+    for file_name, emoji in json_files.items():
+        data = load_json(file_name)
+        category_name = file_name.replace(".json", "").title()
+
+        if not data:
+            continue  # Skip empty files
+
+        options = [
+            discord.SelectOption(
+                label=item["name"],
+                emoji=item.get("emoji", emoji),
+                value=f"{file_name}|{item['name']}"  # Store both file and name
+            ) for item in data if "name" in item
+        ]
+
+        # Dropdown Selection
+        select = discord.ui.Select(
+          placeholder=f"{emoji} | {category_name}",  # Use the correct emoji from the json_files mapping
+          options=options,
+          custom_id=f"{file_name}_select"
+        )
+
+        select.callback = select_callback  # Attach the callback
+
+        view = discord.ui.View(timeout=None)  # Make View persistent
+        view.add_item(select)
+
+
+
+        if not hasattr(bot, "persistent_views_added"):
+            bot.add_view(view)  # Add view so it persists across reboots
+
+        views.append(view)
+
+    # Send Dropdowns
+    for view in views:
+        await ctx.send(view=view)
+
+    # Ticket & Voucher Buttons
+    button_view = discord.ui.View(timeout=None)  # Persistent view
+    ticket_button = discord.ui.Button(label="Open a ticket - Click Here", url=ticket_link, style=discord.ButtonStyle.url)
+    voucher_button = discord.ui.Button(label="Our Sythe Vouchers", url=voucher_link, style=discord.ButtonStyle.url)
+    button_view.add_item(ticket_button)
+    button_view.add_item(voucher_button)
+
+    if not hasattr(bot, "persistent_views_added"):
+        bot.add_view(button_view)  # Ensure the button view persists
+
+    await ctx.send(view=button_view)
+
+    bot.persistent_views_added = True  # Mark persistent views added
+    
 
 # Syncing command tree for slash commands
 @bot.event
