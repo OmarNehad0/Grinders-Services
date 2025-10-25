@@ -2166,7 +2166,7 @@ async def view_order(interaction: discord.Interaction, order_id: int):
 # JSON Files Mapping
 json_files = {
     "minigames.json": "🎲",
-    "skills.json:" : "🧮",
+    "skills.json" : "🧮",
     "diaries.json": "📘"
 }
 
