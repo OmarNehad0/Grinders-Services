@@ -2166,6 +2166,7 @@ async def view_order(interaction: discord.Interaction, order_id: int):
 # JSON Files Mapping
 json_files = {
     "minigames.json": "🎲",
+    "skills.json:" : "🧮",
     "diaries.json": "📘"
 }
 
@@ -2256,15 +2257,15 @@ async def select_callback(interaction: discord.Interaction):
         embed.add_field(name="Available Options", value="No items found.", inline=False)
 
     embed.set_thumbnail(url=category_data.get("image", THUMBNAIL_URL))
-    embed.set_author(name="Heaven Services", icon_url=AUTHOR_ICON_URL)
-    embed.set_footer(text="Heaven Services", icon_url=AUTHOR_ICON_URL)
+    embed.set_author(name="Grinders System", icon_url=AUTHOR_ICON_URL)
+    embed.set_footer(text="Grinders System", icon_url=AUTHOR_ICON_URL)
 
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
 @bot.command()
 async def dropdown(ctx):
-    banner_url = "https://media.discordapp.net/attachments/1332341372333723732/1332806835375308811/demo1.gif"
-    ticket_link = "https://discord.com/channels/520905245174267908/1327419108366487634"
+    banner_url = "https://i.postimg.cc/mDtdnPyv/dbanner1.gif"
+    ticket_link = "https://discord.com/channels/1414948143250018307/1416764157298085888"
     voucher_link = "https://www.sythe.org/threads/heaven-services-vouch-thread/"
 
     # Send Banner Before Dropdowns
