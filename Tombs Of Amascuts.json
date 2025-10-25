@@ -9,47 +9,47 @@
       "items": [
         {
           "name": "150 Raid Level - With Budget Gear",
-          "price": 12000000,
+          "price": 10000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Elidinis%27_Warden.png/180px-Elidinis%27_Warden.png?c9f68"
         },
         {
           "name": "200 Raid Level - With Budget Gears",
-          "price": 14000000,
+          "price": 12000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Elidinis%27_Warden.png/180px-Elidinis%27_Warden.png?c9f68"
         },
         {
           "name": "250 Raid Level - With Budget Gears",
-          "price": 16000000,
+          "price": 14000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Elidinis%27_Warden.png/180px-Elidinis%27_Warden.png?c9f68"
         },
         {
           "name": "300 Raid Level",
-          "price": 21000000,
+          "price": 16000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Elidinis%27_Warden.png/180px-Elidinis%27_Warden.png?c9f68"
         },
         {
           "name": "350 Raid Level (Ava's Kit)",
-          "price": 30000000,
+          "price": 20000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Elidinis%27_Warden.png/180px-Elidinis%27_Warden.png?c9f68"
         },
         {
         "name" : "400 Raid Level",
-        "price" : 40000000,
+        "price" : 25000000,
         "image" : "https://oldschool.runescape.wiki/images/thumb/Elidinis%27_Warden.png/180px-Elidinis%27_Warden.png?c9f68"
         },
         {
           "name": "425 Raid Level (Ward Kit)",
-          "price": 56000000,
+          "price": 3000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Elidinis%27_Warden.png/180px-Elidinis%27_Warden.png?c9f68"
         },
         {
           "name": "450 Raid Level",
-          "price": 70000000,
+          "price": 60000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Elidinis%27_Warden.png/180px-Elidinis%27_Warden.png?c9f68"
         },
         {
           "name": "500 Raid Level (Fang Kit)",
-          "price": 95000000,
+          "price": 100000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Elidinis%27_Warden.png/180px-Elidinis%27_Warden.png?c9f68"
         }
       ],
@@ -65,7 +65,7 @@
       "items": [
         {
           "name": "All Demiboss Transmogs Pack",
-          "price": 650000000,
+          "price": 400000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Tumeken%27s_Guardian_%28follower%29.png/250px-Tumeken%27s_Guardian_%28follower%29.png?7583d"
         }],
           "emoji" : "<:250pxTumekens_Guardian_follower:1319271332692758548>"
@@ -80,7 +80,7 @@
       "items": [
         {
           "name": "Zebak Transmog",
-          "price": 150000000,
+          "price": 120000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Zebo_%28follower%29.png/280px-Zebo_%28follower%29.png?f874d"
         }],
           "emoji" : "<:280pxZebo_follower:1321174930775081113>"
@@ -95,7 +95,7 @@
       "items": [
         {
           "name": "Kephri Transmog",
-          "price": 200000000,
+          "price": 150000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Kephriti_%28follower%29.png/250px-Kephriti_%28follower%29.png?f874d"
         }
       ],
