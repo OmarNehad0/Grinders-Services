@@ -6,17 +6,17 @@
         "items": [
             {
                 "name": "Armadyl (No Chins)",
-                "price": 1800000,
+                "price": 3500000,
                 "image" : "https://oldschool.runescape.wiki/images/thumb/Kree%27arra.png/800px-Kree%27arra.png?ba75c"
             },
             {
                 "name": "Armadyl (Red Chins)",
-                "price": 1700000,
+                "price": 2800000,
                 "image" : "https://oldschool.runescape.wiki/images/thumb/Kree%27arra.png/800px-Kree%27arra.png?ba75c"
             },
             {
                 "name": "Armadyl (Black Chins)",
-                "price": 1400000,
+                "price": 2500000,
                 "image" : "https://oldschool.runescape.wiki/images/thumb/Kree%27arra.png/800px-Kree%27arra.png?ba75c"}],
                 "emoji" : "<:280pxKreearra:1321168406359179364>"
         },
@@ -27,7 +27,7 @@
                 "items" : [
 
                { "name": "Bandos",
-                 "price" : 1500000,
+                 "price" : 1400000,
                  "image" : "https://oldschool.runescape.wiki/images/thumb/General_Graardor.png/280px-General_Graardor.png?4dd90"
                }],
                 "emoji" : "<:280pxGeneral_Graardor:1321168401967878185>"
@@ -50,7 +50,7 @@
                 "items" : [
 
                { "name": "Zamorak",
-                 "price" : 1500000,
+                 "price" : 1200000,
                  "image" : "https://oldschool.runescape.wiki/images/thumb/K%27ril_Tsutsaroth.png/280px-K%27ril_Tsutsaroth.png?73bda"
                }],
                 "emoji" : "<:280pxKril_Tsutsaroth:1321168411107262595>"
@@ -61,18 +61,18 @@
                     "items" : [
     
                    { "name": "Nex - Logins - Small team (6-8) with Twisted Bow",
-                     "price" : 2000000,
+                     "price" : 3000000,
                      "image" : "https://oldschool.runescape.wiki/images/thumb/Nex.png/800px-Nex.png?2a1b3"
                 },
                 
                 {  "name": "Nex - Logins - 5 Mans with Twisted Bow",
-                   "price" : 4000000,
+                   "price" : 5000000,
                    "image" : "https://oldschool.runescape.wiki/images/thumb/Nex.png/800px-Nex.png?2a1b3"
                  },
                  
                  
                  {  "name": "Nex - Logins - 3 Mans with Twisted Bow",
-                 "price" : 6000000,
+                 "price" : 7000000,
                  "image" : "https://oldschool.runescape.wiki/images/thumb/Nex.png/800px-Nex.png?2a1b3"
                }   
                 ],
