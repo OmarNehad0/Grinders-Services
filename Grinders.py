@@ -2162,7 +2162,8 @@ async def view_order(interaction: discord.Interaction, order_id: int):
     embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&=")
     await interaction.response.send_message(embed=embed)
 
-
+THUMBNAIL_URL = "https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&="
+AUTHOR_ICON_URL = "https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=68f2aae9&is=68f15969&hm=df5149fe487b0a8faa8636cf948fc1cd1fb65ae0afb022dd447b7221eb21af0d&="
 # JSON Files Mapping
 json_files = {
     "minigames.json": "🎲",
