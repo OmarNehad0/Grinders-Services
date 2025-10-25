@@ -23,7 +23,7 @@
         "items": [
             {
                 "name": "50% Purple Chance",
-                "price": 270000000,
+                "price": 300000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Great_Olm_%28Christmas%29.png/800px-Great_Olm_%28Christmas%29.png?48b39"
             }
         ],
@@ -37,8 +37,8 @@
         "caption": "Additional costs:\nNot able to fish/cook is +10%\nNo Fish Eater is 10m\nBuying 3 kc gets you 4% Discount\nBuying 5 kc gets you 7% Discount\nBuying 10 kc gets you 10% Discount.",
         "items": [
             {
-                "name": "65% Purple Chance",
-                "price": 430000000,
+                "name": "60% Purple Chance",
+                "price": 450000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Great_Olm_%28Christmas%29.png/800px-Great_Olm_%28Christmas%29.png?48b39"
             }
         ],
@@ -68,7 +68,7 @@
         "items": [
             {
                 "name": "100% Purple Chance +1 Prayer Scroll Protection",
-                "price": 1050000000,
+                "price": 1150000000,
                 "image": "https://oldschool.runescape.wiki/images/thumb/Great_Olm_%28Christmas%29.png/800px-Great_Olm_%28Christmas%29.png?48b39"
             }
         ],
