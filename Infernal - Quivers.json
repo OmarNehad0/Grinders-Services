@@ -1,7 +1,7 @@
 [ {
         "name": "Dizana's Quiver",
         "aliases": ["quiver"],
-        "caption" : "You keep all loot.\n Prices may vary depending on stats and gear \n Using Parsec Would Cost +50%",
+        "caption" : "You keep all loot.\n Prices may vary depending on stats and gear \n Using Parsec Would Cost +50%\nBundle Discount 10x Quivers for 110m ea",
         "items": [
             {
                 "name": "Quiver Max Gear - Login",
@@ -12,6 +12,51 @@
                 "name": "Quiver Budget Gear - Login",
                 "price": 200000000,
                 "image" : "https://oldschool.runescape.wiki/images/thumb/Dizana%27s_quiver_detail.png/150px-Dizana%27s_quiver_detail.png?f6c23"
+            },
+                {
+                "name": "Zerker max gear",
+                "price": 230000000,
+                "image" : "https://oldschool.runescape.wiki/images/thumb/Dizana%27s_quiver_detail.png/150px-Dizana%27s_quiver_detail.png?f6c23"
+            },
+            {
+                "name": "Parsec Zerker (max gear)",
+                "price": 325000000,
+                "image" : "https://oldschool.runescape.wiki/images/thumb/Dizana%27s_quiver_detail.png/150px-Dizana%27s_quiver_detail.png?f6c23"
+            },
+                {
+                "name": "Zerker Budget gear",
+                "price": 280000000,
+                "image" : "https://oldschool.runescape.wiki/images/thumb/Dizana%27s_quiver_detail.png/150px-Dizana%27s_quiver_detail.png?f6c23"
+            },
+            {
+                "name": "Parsec Zerker (Budget gear)",
+                "price": 395000000,
+                "image" : "https://oldschool.runescape.wiki/images/thumb/Dizana%27s_quiver_detail.png/150px-Dizana%27s_quiver_detail.png?f6c23"
+            },
+                {
+                "name": "Pure max gear",
+                "price": 250000000,
+                "image" : "https://oldschool.runescape.wiki/images/thumb/Dizana%27s_quiver_detail.png/150px-Dizana%27s_quiver_detail.png?f6c23"
+            },
+            {
+                "name": "Parsec Pure (max gear)",
+                "price": 350000000,
+                "image" : "https://oldschool.runescape.wiki/images/thumb/Dizana%27s_quiver_detail.png/150px-Dizana%27s_quiver_detail.png?f6c23"
+            },
+                {
+                "name": "Pure Budget gear",
+                "price": 300000000,
+                "image" : "https://oldschool.runescape.wiki/images/thumb/Dizana%27s_quiver_detail.png/150px-Dizana%27s_quiver_detail.png?f6c23"
+            },
+            {
+                "name": "Parsec Pure (Budget gear)",
+                "price": 420000000,
+                "image" : "https://oldschool.runescape.wiki/images/thumb/Dizana%27s_quiver_detail.png/150px-Dizana%27s_quiver_detail.png?f6c23"
+            }
+                {
+                "name": " Wave 1 for shards",
+                "price": 500000,
+                "image" : "https://oldschool.runescape.wiki/images/thumb/Sunfire_splinters_4_detail.png/260px-Sunfire_splinters_4_detail.png?a1a45"
             }
         ],
                 "emoji" : "<:Dizanas_max_cape_detail:1230053959452856371>"
@@ -129,3 +174,4 @@
                 "emoji" : "<:792pxJalTokJad:1210271524364353616>"
     }
 ]
+
