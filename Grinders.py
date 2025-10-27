@@ -2285,13 +2285,26 @@ async def dropdown(ctx):
         if not data:
             continue  # Skip empty files
 
-        options = [
-            discord.SelectOption(
-                label=item["name"],
-                emoji=item.get("emoji", emoji),
-                value=f"{file_name}|{item['name']}"  # Store both file and name
-            ) for item in data if "name" in item
-        ]
+        options = []
+        for item in data:
+            if "name" not in item:
+                continue
+
+            # Determine emoji safely
+            emoji_value = item.get("emoji")
+            if not emoji_value or not isinstance(emoji_value, str) or emoji_value.strip() == "":
+                emoji_value = emoji  # fallback from json_files
+
+            try:
+                opt = discord.SelectOption(
+                    label=item["name"],
+                    emoji=emoji_value,
+                    value=f"{file_name}|{item['name']}"
+                )
+                options.append(opt)
+            except Exception as e:
+                print(f"⚠️ Skipping invalid emoji in {item['name']}: {emoji_value} ({e})")
+
 
         # Dropdown Selection
         select = discord.ui.Select(
