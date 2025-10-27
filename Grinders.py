@@ -2295,15 +2295,32 @@ async def dropdown(ctx):
             if not emoji_value or not isinstance(emoji_value, str) or emoji_value.strip() == "":
                 emoji_value = emoji  # fallback from json_files
 
+            # Safe emoji handling
+            emoji_value = item.get("emoji")
+            if not emoji_value or not isinstance(emoji_value, str):
+                emoji_value = None
+            else:
+                emoji_value = emoji_value.strip()
+                # Skip if emoji contains invalid format like <:custom:123> or text
+                if not emoji_value or ":" in emoji_value or len(emoji_value) > 8:
+                    emoji_value = None
+
             try:
-                opt = discord.SelectOption(
-                    label=item["name"],
-                    emoji=emoji_value,
-                    value=f"{file_name}|{item['name']}"
-                )
+                if emoji_value:
+                    opt = discord.SelectOption(
+                        label=item["name"],
+                        emoji=emoji_value,
+                        value=f"{file_name}|{item['name']}"
+                    )
+                else:
+                    opt = discord.SelectOption(
+                        label=item["name"],
+                        value=f"{file_name}|{item['name']}"
+                    )
                 options.append(opt)
             except Exception as e:
                 print(f"⚠️ Skipping invalid emoji in {item['name']}: {emoji_value} ({e})")
+
 
 
         # Dropdown Selection
