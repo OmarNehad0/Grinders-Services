@@ -1,0 +1,537 @@
+[
+    {
+      "name": "Agility Pyramid",
+      "emoji":"1063258811894337546",
+      "aliases": [
+        "agilpyramid"
+      ],
+      "caption": "Prices are per lap",
+      "items": [
+        {
+          "name": "Level 30-50",
+          "price": 500000
+        },
+        {
+          "name": "Level 50-75",
+          "price": 350000
+        },
+        {
+          "name": "Level 75+",
+          "price": 250000
+        }
+      ]
+    },
+    {
+      "name": "Air Orb",
+      "emoji":"1062158958405623878",
+      "aliases": [
+        "airorb",
+        "imao"
+      ],
+      "items": [
+        {
+          "name": "Price per air orb",
+          "price": 10000
+        }
+      ]
+    },
+    {
+      "name": "Charter Ship",
+      "emoji":"1062157316008444004",
+      "aliases": [
+        "charter",
+        "chartership"
+      ],
+      "items": [
+        {
+          "name": "With Stamina - Per Item",
+          "price": 4500
+        },
+        {
+          "name": "Without Stamina - Per Item",
+          "price": 6500
+        }
+      ]
+    },
+    {
+      "name": "Dragon Kills",
+      "emoji":"1062158967725375588",
+      "aliases": [
+        "dragon",
+        "dragons",
+        "drag"
+      ],
+      "caption": "Prices below are per kill",
+      "items": [
+            {
+              "name": "Green Dragon - Wilderness (Bones + Hide)",
+              "price": 75000
+            },
+            {
+              "name": "Green Dragon - Wilderness (Bones)",
+              "price": 60000
+            },
+            {
+              "name": "Blue Dragon - Falador (Bones 70+ Agility)",
+              "price": 75000
+            },
+            {
+              "name": "Blue Dragon - Falador (Bones -70 Agility)",
+              "price": 95000
+            },
+            {
+              "name": "Blue Dragon - Falador (Bones + Hide 70+ Agility)",
+              "price": 80000
+            },
+            {
+              "name": "Blue Dragon - Falador (Bones + Hide -70 Agility)",
+              "price": 100000
+            },
+            {
+              "name": "Green Dragon - Myths Guild (Bones + Hide)",
+              "price": 70000
+            },
+            {
+              "name": "Green Dragon - Myths Guild (Bones)",
+              "price": 50000
+            },
+            {
+              "name": "Blue Dragon - Myths Guild (Bones + Hide)",
+              "price": 90000
+            },
+            {
+              "name": "Blue Dragon - Myths Guild (Bones)",
+              "price": 70000
+            }
+      ]
+    },
+    {
+      "name": "Farming Runs",
+      "emoji":"1062159002055745567",
+      "aliases": [
+        "farmrun",
+        "frun"
+      ],
+      "caption": "Prices below are per run",
+      "items": [
+        {
+          "name": "Bird House Run",
+          "price": 1000000
+        },
+        {
+          "name": "Giant Seaweed Run",
+          "price": 500000
+        },
+        {
+          "name": "Herb Patch Run",
+          "price": 2000000
+        }
+      ]
+    },
+    {
+      "name": "Mining Ores",
+      "emoji":"1062158982682267780",
+      "aliases": [
+        "gsore",
+        "imores",
+        "ores"
+      ],
+      "caption": "Prices below are per ore.\nAdd 35% if no staminas/graceful.\nAdd 25% if you don't own a coal bag.\nAdd +25% if no d pickaxe",
+      "items": [
+            {
+                "name": "Coal Ores",
+                "price": 2000
+              },
+              {
+                "name": "Other Ores",
+                "price": 1500
+              },
+              {
+                "name": "Steel Ores",
+                "price": 3000
+              },
+              {
+                "name": "Mithril Ores",
+                "price": 4500
+              },
+              {
+                "name": "Addy Ores",
+                "price": 5500
+              },
+              {
+                "name": "Rune Ores",
+                "price": 7500
+              }
+      ]
+    },
+    {
+      "name": "Secondaries Gathering (herblore)",
+      "emoji":"1062158991670661190",
+      "aliases": [
+        "herbs",
+        "herbgather"
+      ],
+      "caption": "Prices below are per item",
+      "items": [
+        {
+          "name": "Blue Dragon Scales - Mythical Guild",
+          "price": 17000
+        },
+        {
+          "name": "Blue Dragon Scales - 70+ Agility Taverley Dungeon",
+          "price": 18000
+        },
+        {
+          "name": "Frog Legs",
+          "price": 14000
+        },
+        {
+          "name": "Limpwrut",
+          "price": 8000
+        },
+        {
+          "name": "Mort Myre Fungus - Without Morytania Hard Diary",
+          "caption": "prices assume Fairy ring in POH",
+          "price": 11000
+        },
+        {
+          "name": "Mort Myre Fungus - With Morytania Hard Diary",
+          "caption": "prices assume Fairy ring in POH",
+          "price": 11000
+        },
+        {
+          "name": "Red Spider Eggs - Without Sardines Banked And No Ardy Hard Diary",
+          "caption": "assumes fremennik easy diary completion",
+          "price": 15000
+        },
+        {
+          "name": "Red Spider Eggs - With Sardines Banked And Ardy Hard Diary",
+          "caption": "assumes fremennik easy diary completion",
+          "price": 13000
+        },
+        {
+          "name": "Sinister Key - Per Key",
+          "price": 700000
+        },
+        {
+          "name": "Snapegrass - With Waterbirth Teleport Only",
+          "price": 11000
+        },
+        {
+          "name": "Snapegrass - With Waterbirth Teleport And Fremennik Easy Diary",
+          "price": 9000
+        },
+        {
+          "name": "Unicorn Horns - No Cowhides Banked",
+          "price": 27000
+        },
+        {
+          "name": "Unicorn Horns - With Cowhides Banked",
+          "price": 18000
+        },
+        {
+          "name": "White berries - with Teleport Crystal Unlocked",
+          "price": 15000
+        },
+        {
+          "name": "Wines of Zamorak - Without Wilderness Hard Diary",
+          "price": 60000
+        },
+        {
+          "name": "Wines of Zamorak - With Wilderness Hard Diary",
+          "price": 27000
+        }
+      ]
+    },
+    {
+      "name": "Impling Catching",
+      "emoji":"1062158953871585280",
+      "aliases": [
+        "imphunt",
+        "imps"
+      ],
+      "items": [
+        {
+          "name": "Young - No Jars Banked",
+          "price": 60000
+        },
+        {
+          "name": "Young - Jars Banked",
+          "price": 50000
+        },
+        {
+          "name": "Eclectic Imp - No Jars Banked",
+          "price": 95000
+        },
+        {
+          "name": "Eclectic - Jars Banked",
+          "price": 65000
+        },
+        {
+          "name": "Ninja / Magpie - No Jars Banked",
+          "price": 160000
+        },
+        {
+          "name": "Ninja / Magpie - Jars Banked",
+          "price": 150000
+        },
+        {
+          "name": "Dragon - Must Have Jars Banked",
+          "price": 10000000
+        },
+        {
+          "name": "Crystal Impling - Must Have Jars Banked",
+          "price": 10000000
+        },
+        {
+          "name": "Lucky Impling - Must Have Jars Banked",
+          "price": 20000000
+        }
+      ]
+    },
+    {
+      "name": "Mining Sand",
+      "emoji":"1062158996372459650",
+      "aliases": [
+        "sand"
+      ],
+      "caption": "Prices below are for each bucket of sand.\n+800k if humidify is not unlocked and no varrock armour 2.\n+25% if no buckets banked.",
+      "items": [
+        {
+          "name": "55+ Mining",
+          "price": 6000
+        },
+        {
+          "name": "85+ Mining",
+          "price": 4000
+        }
+      ]
+    },
+    {
+      "name": "Miscellaneous Stuff",
+      "emoji":"1062157399785488475",
+      "aliases": [
+        "misc"
+      ],
+      "caption": "Prices are per item",
+      "items": [
+        {
+          "name": "Amethyst - With Expert Mining Gloves",
+          "price": 35000
+        },
+        {
+          "name": "Amethyst - Without Expert Mining Gloves",
+          "price": 42000
+        },
+        {
+          "name": "Bank Organization",
+          "price": 25000000
+        },
+        {
+          "name": "Blowing Glass",
+          "price": 2500
+        },
+        {
+          "name": "Cannonball Smelt - 35+ Smithing, Steel Bars Banked",
+          "price": 2000
+        },
+        {
+          "name": "Cannonball Smelt - 35+ Smithing, Gathering Steel Bars",
+          "price": 5000
+        },
+        {
+          "name": "Cat Grow Up",
+          "price": 5000000
+        },
+        {
+          "name": "Daeyalt Essence",
+          "price": 700
+        },
+        {
+          "name": "Making Glass - Cost Per Seaweed",
+          "price": 8000
+        },
+        {
+          "name": "Mythical Cape - Dragon Slayer 2 Completed",
+          "price": 500000
+        },
+        {
+          "name": "Necklaces & Amulets",
+          "price": 2000
+        },
+        {
+          "name": "Pure Essence",
+          "price": 4000
+        },
+        {
+          "name": "Red Chinchompa - With Western Provinces Hard Diary",
+          "price": 30000
+        },
+        {
+          "name": "Red Chinchompa - Without Western Provinces Hard Diary",
+          "price": 35000
+        },
+        {
+          "name": "Slayer Rings",
+          "price": 2000
+        },
+        {
+          "name": "Spices - 4 Doses",
+          "price": 300000
+        }
+      ]
+    },
+    {
+      "name": "Plank Making",
+      "emoji":"1062158986926886922",
+      "aliases": [
+        "plank",
+        "sawmill"
+      ],
+      "caption": "Prices below are per plank.",
+      "items": [
+        {
+            "name": "Logs (Plank Making - Logs Banked)",
+            "price": 3000
+          },
+          {
+            "name": "Oak (Plank Making - Logs Banked)",
+            "price": 3000
+          },
+          { 
+            "name": "Teak (Plank Making - Logs Banked)",
+            "price": 3000
+          },
+          {
+            "name": "Mahogany (Plank Making - Logs Banked)",
+            "price": 3000
+          },
+          {
+            "name": "Oak - 50+ Wc, Rune Axe+ (Gathering Logs & Plank Making)",
+            "price": 6000
+          },
+          {
+            "name": "Teak Logs - 60+ Wc, Rune Axe+ (Gathering Logs & Plank Making)",
+            "price": 11000
+          },
+          {
+            "name": "Mahogany Logs - 70+ Wc, Rune Axe+ (Gathering Logs & Plank Making)",
+            "price": 13000
+          }
+      ]
+    },
+    {
+      "name": "Raw Food Gathering",
+      "emoji":"1062159005927092325",
+      "aliases": [
+        "food"
+      ],
+      "caption": "Prices below are per item",
+      "items": [
+        {
+          "name": "Anglerfish - 82-90 Fishing",
+          "price": 25000
+        },
+        {
+          "name": "Anglerfish - 90-99 Fishing",
+          "price": 20000
+        },
+        {
+          "name": "Karambwan - Without POH Fairy Ring",
+          "price": 12000
+        },
+        {
+          "name": "Karambwan - With POH Fairy Ring",
+          "price": 10000
+        },
+        {
+          "name": "Lobsters - 60+ Fishing",
+          "price": 8000
+        },
+        {
+          "name": "Minnow Fishing - 82+ Fish, Angler Outfit",
+          "price": 200000
+        },
+        {
+          "name": "Monkfish - 62+ Fishing, Swan Song Quest Completed",
+          "price": 25000
+        },
+        {
+          "name": "Monkfish - 80+ Fishing, Swan Song Quest Completed",
+          "price": 20000
+        },
+        {
+          "name": "Sharks 82-92 Fishing",
+          "price": 15000
+        },
+        {
+          "name": "Sharks 92-99 Fishing",
+          "price": 12000
+        }
+      ]
+    },
+    {
+      "name": "Thieving Master Farmer",
+      "emoji":"1062159022251327529",
+      "aliases": [
+        "masterfarmer"
+      ],
+      "caption": "Prices below are per exp (gp/xp)\n+15% Without a seedbox.",
+      "items": [
+        {
+          "name": "50-60 Thieving - With Rogues & Ardy Cloak 2",
+          "price": 190
+        },
+        {
+          "name": "50-60 Thieving - Without Rogues & Ardy Cloak 2",
+          "price": 200
+        },
+        {
+          "name": "60-70 Thieving - With Rogues & Ardy Cloak 2",
+          "price": 170
+        },
+        {
+          "name": "60-70 Thieving - Without Rogues & Ardy Cloak 2",
+          "price": 180
+        },
+        {
+          "name": "70-80 Thieving - With Rogues & Ardy Cloak 2",
+          "price": 150
+        },
+        {
+          "name": "70-80 Thieving - Without Rogues & Ardy Cloak 2",
+          "price": 170
+        },
+        {
+          "name": "80-90 Thieving - With Rogues & Ardy Cloak 2",
+          "price": 150
+        },
+        {
+          "name": "80-90 Thieving - Without Rogues & Ardy Cloak 2",
+          "price": 160
+        },
+        {
+          "name": "90-99 Thieving - With Rogues & Ardy cloak 3",
+          "price": 130
+        },
+        {
+          "name": "90-99 Thieving - Without Rogues & Ardy cloak 3",
+          "price": 140
+        }
+      ]
+    },
+    {
+      "name": "Volcanic Ash",
+      "emoji":"1062158963061301329",
+      "aliases": [
+        "ash"
+      ],
+      "caption": "3.5k minimum, prices depend on mining lvl",
+      "items": [
+        {
+          "name": "Each",
+          "price": 3500
+        }
+      ]
+    }
+  ]
