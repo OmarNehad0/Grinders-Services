@@ -2168,7 +2168,9 @@ AUTHOR_ICON_URL = "https://media.discordapp.net/attachments/1387923748585476236/
 json_files = {
     "minigames.json": "🎲",
     "skills.json" : "🧮",
-    "diaries.json": "📘"
+    "diaries.json": "📘",
+    "ironman.json" : "👷‍♂️",
+    "miscellaneous.json" : "🧬"
 }
 
 # Function to Load JSON Data
