@@ -207,7 +207,7 @@ async def feedback(ctx):
             # Add the vouch button on a new row
             self.add_item(Button(
             label="Vouch For Us On Sythe!.",
-            url="https://www.sythe.org/threads/www-sythe-org-threads-cynx-osrs-service-vouch-thread/page-6#post-85913828",
+            url="https://www.sythe.org/threads/grinders-service-vouches/",
             style=discord.ButtonStyle.url,
             emoji=discord.PartialEmoji(name="sytheicon", id=1332330797998280724)
             ))
@@ -254,7 +254,7 @@ async def feedback(ctx):
         title="📝 Vouch For Us!",
         color = discord.Color.from_rgb(200, 0, 0), #red color
         description=(
-        "**💫 We Appreciate Your Vouch on [Sythe](https://www.sythe.org/threads/www-sythe-org-threads-cynx-osrs-service-vouch-thread/page-6#post-85913828).** \n\n"
+        "**💫 We Appreciate Your Vouch on [Sythe](https://www.sythe.org/threads/grinders-service-vouches/).** \n\n"
         "**Please select your rating below (1-5 stars).**\n"
         "Once Selected, You Will Be Asked To Leave A Review."
         )
@@ -611,7 +611,7 @@ async def start(ctx):
     await ctx.send(banner_gif_url)
     import io
     ticket_link = "https://discord.com/channels/1208792946401615893/1208792946883690550"
-    voucher_link = "https://www.sythe.org/threads/www-sythe-org-threads-cynx-osrs-service-vouch-thread/"
+    voucher_link = "https://www.sythe.org/threads/grinders-service-vouches/"
     
 
     # Group JSON files into chunks (e.g., 3 dropdowns per message)
@@ -752,7 +752,7 @@ async def b(ctx, *, boss_name_with_multiplier: str):
         # Button View
         button_view = discord.ui.View(timeout=None)
         ticket_link = "https://discord.com/channels/1414948143250018307/1416764157298085888"
-        voucher_link = "https://www.sythe.org/threads/www-sythe-org-threads-cynx-osrs-service-vouch-thread/"
+        voucher_link = "https://www.sythe.org/threads/grinders-service-vouches/"
 
         ticket_button = discord.ui.Button(
             label="🎟️ Open a Ticket - Click Here",
@@ -941,7 +941,7 @@ async def quest_calculator(ctx, *, quests: str):
 
     # Ticket button with emoji
     ticket_link = "https://discord.com/channels/1208792946401615893/1208792946883690550"
-    voucher_link = "https://www.sythe.org/threads/www-sythe-org-threads-cynx-osrs-service-vouch-thread/"
+    voucher_link = "https://www.sythe.org/threads/grinders-service-vouches/"
     ticket_button = discord.ui.Button(
     label="🎟️ Open a Ticket - Click Here",
     url=ticket_link,
@@ -1125,7 +1125,7 @@ async def s(ctx, skill_name: str, levels: str):
 
         # Ticket button with emoji
         ticket_link = "https://discord.com/channels/1414948143250018307/1416764157298085888"
-        voucher_link = "https://www.sythe.org/threads/www-sythe-org-threads-cynx-osrs-service-vouch-thread/"
+        voucher_link = "https://www.sythe.org/threads/grinders-service-vouches/"
         ticket_button = discord.ui.Button(
         label="🎟️ Open a Ticket - Click Here",
         url=ticket_link,
@@ -2269,7 +2269,7 @@ async def select_callback(interaction: discord.Interaction):
 async def dropdown(ctx):
     banner_url = "https://i.postimg.cc/mDtdnPyv/dbanner1.gif"
     ticket_link = "https://discord.com/channels/1414948143250018307/1416764157298085888"
-    voucher_link = "https://www.sythe.org/threads/heaven-services-vouch-thread/"
+    voucher_link = "https://www.sythe.org/threads/grinders-service-vouches/"
 
     # Send Banner Before Dropdowns
     banner_embed = discord.Embed()
