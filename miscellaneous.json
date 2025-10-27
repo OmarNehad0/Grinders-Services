@@ -1,0 +1,99 @@
+[
+    {
+      "name": "Clue Scrolls",
+      "emoji":"1062158973433823343",
+      "aliases": [
+        "clues",
+        "clue"
+      ],
+      "items": [
+        {
+          "name": "Easy",
+          "price": 900000
+        },
+        {
+          "name": "Medium",
+          "price": 1500000
+        },
+        {
+          "name": "Hard",
+          "price": 2500000
+        },
+        {
+          "name": "Elite",
+          "price": 3000000
+        },
+        {
+          "name": "Master",
+          "price": 4000000
+        }
+      ]
+    },
+    {
+      "name": "Outfits",
+      "emoji":"1062157328968843385",
+      "aliases": [
+        "outfits"
+      ],
+      "items": [
+        {
+          "name": "Angler oufit - per piece",
+          "price": 1100000
+        },
+        {
+          "name": "Complete Angler Set",
+          "price": 40000000
+        },
+        {
+          "name": "Full Graceful Set",
+          "price": 90000000
+        },
+        {
+          "name": "Lumberjack Outfit - w/only Aid in Myreque",
+          "price": 30000000
+        },
+        {
+          "name": "Lumberjack Outfit - w/Aid + Darkness",
+          "price": 20000000
+        },
+        {
+          "name": "Prospector Helmet",
+          "price": 20000000
+        },
+        {
+          "name": "Prospector Jacket",
+          "price": 30000000
+        },
+        {
+          "name": "Prospector Legs",
+          "price": 25000000
+        },
+        {
+          "name": "Prospector Boots",
+          "price": 15000000
+        },
+        {
+          "name": "Full Prospector Outfit",
+          "price": 85000000
+        },
+        {
+          "name": "Coal Bag",
+          "price": 50000000
+        },
+        {
+          "name": "Gem Bag",
+          "price": 50000000
+        },
+        {
+          "name": "Rogue Outfit (50-80 thieving)",
+          "caption": "no stamina +25%",
+          "price": 25000000
+        },
+        {
+          "name": "Rogue Outfit (80+ thieving)",
+          "caption": "no stamina +25%",
+          "price": 15000000
+        }
+     ]
+  }
+]
