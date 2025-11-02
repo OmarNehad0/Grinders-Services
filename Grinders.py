@@ -50,6 +50,7 @@ from discord import ButtonStyle
 # Define intents
 intents = discord.Intents.default()
 intents.message_content = True
+intents.reactions = True
 intents.guilds = True
 intents.messages = True
 intents.members = True
