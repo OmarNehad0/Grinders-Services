@@ -27,7 +27,7 @@
    },
    {
       "name":"Desert Diary",
-      "emoji":"<:Desert_amulet:1333786128116875264>",
+      "emoji":"1333786128116875264",
       "aliases":[
          "desert",
          "ddiary"
@@ -54,7 +54,7 @@
    },
    {
       "name":"Falador Diary",
-      "emoji":"<:Falador_shield:1333786230063628390>",
+      "emoji":"1333786230063628390",
       "aliases":[
          "fally",
          "fdiary"
@@ -85,7 +85,7 @@
    },
    {
       "name":"Fremennik Diary",
-      "emoji":"<:Fremennik_sea_boots:1333786332991848489>",
+      "emoji":"1333786332991848489",
       "aliases":[
          "frem",
          "frdiary"
@@ -111,7 +111,7 @@
    },
    {
       "name":"Kandarin Diary",
-      "emoji":"<:Kandarin_headgear:1333786439388893255>",
+      "emoji":"1333786439388893255",
       "aliases":[
          "kandarin",
          "kand"
@@ -145,7 +145,7 @@
    },
    {
       "name":"Karamja Diary",
-      "emoji":"<:Karamja_gloves:1333786532351316122>",
+      "emoji":"1333786532351316122",
       "aliases":[
          "karamja",
          "karam",
@@ -176,7 +176,7 @@
    },
    {
       "name":"Kourend & Kebos Diary",
-      "emoji":"<:Radas_blessing:1333786639679361096>",
+      "emoji":"1333786639679361096",
       "aliases":[
          "kourend",
          "kebos",
@@ -203,7 +203,7 @@
    },
    {
       "name":"Lumbridge & Draynor Diary",
-      "emoji":"<:Explorers_ring:1333786735901151334>",
+      "emoji":"1333786735901151334",
       "aliases":[
          "lum",
          "draynor",
@@ -235,7 +235,7 @@
    },
    {
       "name":"Morytania Diary",
-      "emoji":"<:Morytania_legs:1333786830465667142>",
+      "emoji":"1333786830465667142",
       "aliases":[
          "morytania",
          "mory",
@@ -262,7 +262,7 @@
    },
    {
       "name":"Varrock Diary",
-      "emoji":"<:Varrock_armour:1333786923415900170>",
+      "emoji":"1333786923415900170",
       "aliases":[
          "varrock",
          "vdiary"
@@ -288,7 +288,7 @@
    },
    {
       "name":"Western Provinces Diary",
-      "emoji":"<:Western_banner:1333787083763875840>",
+      "emoji":"1333787083763875840",
       "aliases":[
          "west",
          "wpdiary"
@@ -326,7 +326,7 @@
    },
    {
       "name":"Wilderness Diary",
-      "emoji":"<:Wilderness_sword:1333787172876193856>",
+      "emoji":"1333787172876193856",
       "aliases":[
          "wildy",
          "wdiary",
