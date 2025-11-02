@@ -104,6 +104,8 @@ class InfoModal(Modal, title="Provide Your Information"):
 TOS_ROLE_ID = 1434598788995219537  # Role ID to give
 TOS_EMOJI = "✅"  # You can replace this with a custom emoji like <:verify:133420012345678901>
 TOS_CHANNEL_ID = 1434310497909604384  # Optional: set to your TOS channel ID to restrict reaction detection
+db = client["tos_database"]
+tos_collection = db["tos_message"]
 
 @bot.command()
 @commands.has_permissions(administrator=True)
@@ -205,7 +207,16 @@ async def tos(ctx):
     embed.set_footer(text="React below to accept our Terms of Service ✅")
 
     # Send embed
+        # Send embed
     message = await ctx.send(embed=embed)
+    await message.add_reaction(TOS_EMOJI)
+
+    # Store message ID in MongoDB
+    tos_collection.update_one(
+        {"_id": "tos_message"},
+        {"$set": {"message_id": message.id}},
+        upsert=True
+    )
 
     # Add reaction automatically
     await message.add_reaction(TOS_EMOJI)
@@ -220,15 +231,23 @@ async def on_raw_reaction_add(payload):
     if payload.member is None or payload.member.bot:
         return
 
-    # Optional: restrict to one channel
-    if TOS_CHANNEL_ID and payload.channel_id != TOS_CHANNEL_ID:
+    # Check correct channel
+    if payload.channel_id != TOS_CHANNEL_ID:
         return
 
     # Only match the correct emoji
     if str(payload.emoji) != TOS_EMOJI:
         return
 
+    # Fetch stored TOS message ID
+    tos_doc = tos_collection.find_one({"_id": "tos_message"})
+    if not tos_doc or payload.message_id != tos_doc["message_id"]:
+        return  # Not the correct message
+
     guild = bot.get_guild(payload.guild_id)
+    if not guild:
+        return
+
     role = guild.get_role(TOS_ROLE_ID)
     if role:
         try:
@@ -236,6 +255,7 @@ async def on_raw_reaction_add(payload):
             print(f"✅ {payload.member} accepted the TOS and received the role.")
         except Exception as e:
             print(f"❌ Failed to assign TOS role: {e}")
+
 
 
 class RevealInfoView(View):
