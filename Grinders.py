@@ -2497,7 +2497,7 @@ async def dropdown(ctx):
                 continue
 
             # Determine emoji safely
-           emoji_value = item.get("emoji")
+            emoji_value = item.get("emoji")
             if isinstance(emoji_value, int) or (isinstance(emoji_value, str) and emoji_value.isdigit()):
                 # Proper Discord format: <:name:ID> — use a generic name
                 emoji_value = f"<:icon:{emoji_value}>"
