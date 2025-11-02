@@ -2498,17 +2498,32 @@ async def dropdown(ctx):
                 continue
 
             # Determine emoji safely
+            # Determine emoji safely
             emoji_value = item.get("emoji")
-            if isinstance(emoji_value, int) or (isinstance(emoji_value, str) and emoji_value.isdigit()):
-                # Proper Discord format: <:name:ID> — use a generic name
-                emoji_value = f"<:icon:{emoji_value}>"
-            elif not emoji_value or not isinstance(emoji_value, str):
+
+            if not emoji_value:
                 emoji_value = None
             else:
-                emoji_value = emoji_value.strip()
-                # Skip if emoji contains invalid format
-                if not emoji_value or ":" in emoji_value or len(emoji_value) > 8:
+                emoji_value = str(emoji_value).strip()
+
+                # Case 1: numeric ID (custom emoji by ID only)
+                if emoji_value.isdigit():
+                    emoji_value = f"<:icon:{emoji_value}>"
+
+                # Case 2: full custom emoji format <:name:ID>
+                elif emoji_value.startswith("<:") and emoji_value.endswith(">"):
+                    # already valid
+                    pass
+
+                # Case 3: standard Unicode emoji (🔥, 💎, ⚔️, etc.)
+                elif any(ord(ch) > 10000 for ch in emoji_value):
+                    # keep as is (emoji symbols)
+                    pass
+
+                # Otherwise, treat it as invalid or plain text
+                else:
                     emoji_value = None
+
 
             try:
                 if emoji_value:
