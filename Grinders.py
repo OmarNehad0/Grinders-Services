@@ -1138,7 +1138,213 @@ async def s(ctx, skill_name: str, levels: str):
     except Exception as e:
         await ctx.send(f"Error calculating skill: {e}")
         
+# --- Buttons view: show all skills ---
+class SkillButton(Button):
+    def __init__(self, skill):
+        super().__init__(
+            label=skill["name"],
+            emoji=skill["emoji"],
+            style=discord.ButtonStyle.blurple,
+            custom_id=f"skill_{skill['name'].lower()}"
+        )
+        self.skill = skill
 
+    async def callback(self, interaction: discord.Interaction):
+        # When a skill is clicked, open modal to enter start & end levels
+        modal = LevelInputModal(self.skill)
+        await interaction.response.send_modal(modal)
+
+
+class LevelInputModal(Modal):
+    def __init__(self, skill):
+        # Ensure title fits Discord's limit (max 45 chars)
+        title_text = f"{skill['name']} Level Input"
+        if len(title_text) > 45:
+            title_text = title_text[:42] + "..."
+
+        super().__init__(title=title_text)
+        self.skill = skill
+
+        self.start_level = TextInput(label="Start Level", placeholder="1")
+        self.target_level = TextInput(label="Target Level", placeholder="99")
+
+        self.add_item(self.start_level)
+        self.add_item(self.target_level)
+
+    async def on_submit(self, interaction: discord.Interaction):
+        try:
+            level_start = int(self.start_level.value)
+            level_end = int(self.target_level.value)
+
+            if not (1 <= level_start < level_end <= 99):
+                await interaction.response.send_message(
+                    "⚠️ Invalid levels! Must be between 1–99.", ephemeral=True
+                )
+                return
+
+            # Run your calculator logic
+            await run_skill_calculator(interaction, self.skill, level_start, level_end)
+
+        except ValueError:
+            await interaction.response.send_message(
+                "⚠️ Please enter valid numbers!", ephemeral=True
+            )
+
+
+class SkillsView(View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        for skill in skills_data:
+            self.add_item(SkillButton(skill))
+
+
+# --- Command to show skill buttons ---
+@bot.command()
+async def skills(ctx):
+    """Show all OSRS skills as clickable buttons"""
+    view = SkillsView()
+    await ctx.send("🧠 **Select a skill to calculate cost:**", view=view)
+
+
+async def run_skill_calculator(interaction, skill, level_start, level_end):
+    """This is your original !s logic, adapted for modal use (ephemeral + logging)."""
+    discount_percent = discount_data["percent"]
+    exchange_rate = current_exchange_rate
+
+    breakdown = []
+    total_gp_cost = 0
+    total_usd_cost = 0
+    current_level = level_start
+
+    while current_level < level_end:
+        valid_methods = [m for m in skill["methods"] if m["req"] <= current_level]
+        if not valid_methods:
+            await interaction.response.send_message(
+                f"No valid methods for level {current_level}.", ephemeral=True
+            )
+            return
+
+        cheapest_method = min(valid_methods, key=lambda m: m["gpxp"])
+        next_method_level = min(
+            (m["req"] for m in skill["methods"] if m["req"] > current_level),
+            default=level_end,
+        )
+        target_level = min(next_method_level, level_end)
+        xp_to_next = XP_TABLE[target_level] - XP_TABLE[current_level]
+
+        discount_multiplier = 1 - (discount_percent / 100)
+        gp_cost = (xp_to_next * cheapest_method["gpxp"] / 1_000_000) * discount_multiplier
+        usd_cost = gp_cost * exchange_rate
+
+        total_gp_cost += gp_cost
+        total_usd_cost += usd_cost
+
+        breakdown.append({
+            "title": cheapest_method["title"],
+            "start_level": current_level,
+            "end_level": target_level,
+            "gp_cost": gp_cost,
+            "usd_cost": usd_cost,
+            "gpxp": cheapest_method["gpxp"],
+        })
+
+        current_level = target_level
+
+    # Build text for other available methods
+    discount_multiplier = 1 - (discount_percent / 100)
+    additional_text = "\n".join([
+        f"**<:stats:1416767980112576522>{method['title']}**\n"
+        f"<:stats:1416767980112576522> Requires level {method['req']} - {method['gpxp']}gp/xp\n"
+        f"<:Bitcoin:1416768698672349355> **${(((XP_TABLE[level_end] - XP_TABLE[level_start]) * method['gpxp'] / 1_000_000) * discount_multiplier) * exchange_rate:,.2f}**\n"
+        for method in skill["methods"]
+    ])
+
+    # --- Split the text into 1024-character chunks ---
+    chunks = []
+    chunk = ""
+    for line in additional_text.split("\n"):
+        if len(chunk) + len(line) + 1 > 1024:
+            chunks.append(chunk)
+            chunk = ""
+        chunk += line + "\n"
+    if chunk:
+        chunks.append(chunk)
+
+    # --- Embed setup ---
+    embed = discord.Embed(
+        title=f"{skill['emoji']} {skill['name']} Calculator",
+        description=f"Requires {XP_TABLE[level_end] - XP_TABLE[level_start]:,} XP",
+        color=discord.Color.from_rgb(139, 0, 0),
+    )
+    embed.add_field(name="**__Start Level__**", value=f"**```{level_start}```**", inline=True)
+    embed.add_field(name="**__End Level__**", value=f"**```{level_end}```**", inline=True)
+    embed.add_field(name="**__Discount__**", value=f"**```{discount_percent}%```**", inline=True)
+
+    embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=69086ba9&is=69071a29&hm=94a6906190b7f0d25ead2a8d5f1f1d54b151fc601537d0655c1a25b1b7c186dc&=")
+    embed.set_footer(text="Grinders System", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=69086ba9&is=69071a29&hm=94a6906190b7f0d25ead2a8d5f1f1d54b151fc601537d0655c1a25b1b7c186dc&=")
+    embed.set_author(name="Grinders System", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif?ex=69086ba9&is=69071a29&hm=94a6906190b7f0d25ead2a8d5f1f1d54b151fc601537d0655c1a25b1b7c186dc&=")
+
+    embed.add_field(
+        name=f"**__~Using the cheapest methods available~__**",
+        value=f"<:Bitcoin:1416768698672349355> **${total_usd_cost:,.2f}**",
+        inline=False,
+    )
+
+    breakdown_text = "\n".join([
+        f"{segment['title']} at level {segment['start_level']}"
+        for segment in breakdown
+    ])
+    embed.add_field(
+        name="**This will consist of the following methods:**",
+        value=breakdown_text,
+        inline=False,
+    )
+
+    embed.add_field(
+        name="**__Alternatively, if you want to choose a specific method__**",
+        value=chunks[0],
+        inline=False,
+    )
+    for chunk in chunks[1:]:
+        embed.add_field(name="‎", value=chunk, inline=False)
+
+    if skill.get("caption"):
+        embed.add_field(name="**Notes**", value=skill["caption"], inline=False)
+
+    # --- Create Buttons View ---
+    button_view = View(timeout=None)
+    ticket_link = "https://discord.com/channels/1414948143250018307/1416764157298085888"
+    voucher_link = "https://www.sythe.org/threads/grinders-service-vouches/"
+
+    ticket_button = Button(
+        label="🎟️ Open a Ticket - Click Here",
+        url=ticket_link,
+        style=ButtonStyle.url
+    )
+    voucher_button = Button(
+        label="Our Sythe Vouches",
+        url=voucher_link,
+        style=ButtonStyle.url,
+        emoji=discord.PartialEmoji(name="sytheicon", id=1416769474618458193)
+    )
+
+    button_view.add_item(ticket_button)
+    button_view.add_item(voucher_button)
+
+    # --- Send the Embed + Buttons (Ephemeral to User) ---
+    await interaction.response.send_message(embed=embed, view=button_view, ephemeral=True)
+
+    # --- Log the use to the log channel ---
+    log_channel = interaction.client.get_channel(1208792947232079955)
+    if log_channel:
+        time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        await log_channel.send(
+            f"🧾 **Skill Calculator Used**\n"
+            f"👤 User: {interaction.user.mention} (`{interaction.user.id}`)\n"
+            f"🧠 Skill: **{skill['name']}**\n"
+            f"📈 Levels: {level_start} ➜ {level_end}\n"
+            f"🕒 Time: `{time_str}`"
+        )
 
 
 # List of channel IDs where the bot should react to messages
