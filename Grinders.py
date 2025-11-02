@@ -1335,7 +1335,7 @@ async def run_skill_calculator(interaction, skill, level_start, level_end):
     await interaction.response.send_message(embed=embed, view=button_view, ephemeral=True)
 
     # --- Log the use to the log channel ---
-    log_channel = interaction.client.get_channel(1208792947232079955)
+    log_channel = interaction.client.get_channel(1416754787566747710)
     if log_channel:
         time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         await log_channel.send(
