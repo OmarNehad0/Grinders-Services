@@ -99,6 +99,143 @@ class InfoModal(Modal, title="Provide Your Information"):
             view=view
         )
 
+# === SETTINGS ===
+TOS_ROLE_ID = 1434598788995219537  # Role ID to give
+TOS_EMOJI = "✅"  # You can replace this with a custom emoji like <:verify:133420012345678901>
+TOS_CHANNEL_ID = 1434310497909604384  # Optional: set to your TOS channel ID to restrict reaction detection
+
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def tos(ctx):
+    """Send the full Terms of Service embed and auto-react."""
+    embed = discord.Embed(
+        title="📜 Terms of Service",
+        color=discord.Color.gold()
+    )
+
+    embed.description = (
+        "__**Official Payments & Contact**__\n"
+        "Only authorized workers can accept or discuss payments.\n"
+        "Anyone else claiming to be a worker is trying to scam you.\n"
+        "❌ No refunds will be given if you get scammed by an imposter.\n"
+        "✅ Always make sure you’re talking to the correct person.\n"
+        "💬 The safest way to contact us is by opening a ticket.\n\n"
+
+        "__**Manual Completion**__\n"
+        "All orders are completed 100% by hand — we never use bots or illegal plugins.\n"
+        "📸 You can request Runelite screenshots during your order.\n\n"
+
+        "__**Account Preparation**__\n"
+        "Before giving us your account details:\n"
+        "• Remove any excess wealth.\n"
+        "• Set a bank PIN if possible.\n"
+        "• Keep only the required items for the service.\n\n"
+
+        "__**Two-Factor Authentication (2FA)**__\n"
+        "Enable 2FA before sharing your account.\n"
+        "Provide the authenticator code to your assigned worker only when asked.\n\n"
+
+        "__**Login Policy**__\n"
+        "Once we start your service, do not log in, try to log in, or change your password.\n"
+        "This can cause delays or even terminate your service.\n\n"
+
+        "__**Timeframes**__\n"
+        "We always try to finish orders within the estimated time.\n"
+        "Sometimes delays happen — no compensation will be provided for that.\n\n"
+
+        "__**Communication & Payments**__\n"
+        "We will NEVER DM you first or ask for account/payment info outside a ticket.\n"
+        "All trades and payments are made inside tickets only.\n"
+        "✅ Always confirm each trade on the in-game trade screen.\n\n"
+
+        "__**Refunds on Incomplete Orders**__\n"
+        "If we can’t finish your order, you’ll be refunded proportionally based on progress made.\n\n"
+
+        "__**Bans or Mutes**__\n"
+        "We’re not responsible for bans or mutes.\n"
+        "We never type in-game and all services are done manually.\n\n"
+
+        "__**Ironmen / UIM / HCIM**__\n"
+        "Prices may differ due to gameplay restrictions.\n"
+        "We are not responsible for any deaths under any circumstances.\n\n"
+
+        "__**Unwanted Levels**__\n"
+        "We are not liable for any unwanted levels gained during the service.\n\n"
+
+        "__**Account Bank Value**__\n"
+        "At login tickets, the customer must declare their bank value and ensure the worker has the required deposit.\n\n"
+
+        "__**Requirements**__\n"
+        "Make sure you have all required levels, quests, and items before ordering.\n"
+        "If not, extra charges may apply.\n\n"
+
+        "__**Payment & Cancellation**__\n"
+        "All services must be paid in full before we start.\n"
+        "Once started, services can be stopped or canceled upon request, but no refunds will be issued.\n\n"
+
+        "__**Account Sales**__\n"
+        "All account sales are final.\n"
+        "Once login info is given, Lava Services is not responsible for bans, mutes, or offenses.\n\n"
+
+        "__**No Refunds on Account Sales**__\n"
+        "Once account details are sent, no refunds will be provided.\n\n"
+
+        "__**Gold Transactions**__\n"
+        "All gold transactions are final.\n"
+        "We can buy/sell gold back at the current rate if you change your mind.\n"
+        "⚠️ Beware of imposters — we’ll never message you in-game or ask you to trade GP back.\n\n"
+
+        "__**Drops & Loot**__\n"
+        "You’ll keep all coins and unique drops collected during your service.\n\n"
+
+        "__**Service Timeframes**__\n"
+        "We reserve the right not to provide fixed timeframes.\n"
+        "Your order will always be completed as soon as possible.\n\n"
+
+        "__**Security Reminder**__\n"
+        "We will NEVER PM you or ask for account info outside of tickets.\n\n"
+
+        "__**Inactive Orders**__\n"
+        "If you place an order but don’t provide the required details within one month,\n"
+        "the ticket will be automatically closed, the order marked completed,\n"
+        "and the worker will receive full payment.\n"
+    )
+
+    embed.set_footer(text="React below to accept our Terms of Service ✅")
+
+    # Send embed
+    message = await ctx.send(embed=embed)
+
+    # Add reaction automatically
+    await message.add_reaction(TOS_EMOJI)
+
+    await ctx.send("✅ TOS embed sent successfully and reaction added.")
+
+
+# === REACTION EVENT ===
+@bot.event
+async def on_raw_reaction_add(payload):
+    """Gives TOS role when reacting to the TOS embed."""
+    if payload.member is None or payload.member.bot:
+        return
+
+    # Optional: restrict to one channel
+    if TOS_CHANNEL_ID and payload.channel_id != TOS_CHANNEL_ID:
+        return
+
+    # Only match the correct emoji
+    if str(payload.emoji) != TOS_EMOJI:
+        return
+
+    guild = bot.get_guild(payload.guild_id)
+    role = guild.get_role(TOS_ROLE_ID)
+    if role:
+        try:
+            await payload.member.add_roles(role, reason="Accepted Terms of Service")
+            print(f"✅ {payload.member} accepted the TOS and received the role.")
+        except Exception as e:
+            print(f"❌ Failed to assign TOS role: {e}")
+
 
 class RevealInfoView(View):
     def __init__(self, embed: discord.Embed, customer: discord.Member, worker: discord.Member):
