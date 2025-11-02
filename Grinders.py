@@ -277,13 +277,13 @@ async def feedback(ctx):
 
 # Payment methods with custom emojis and addresses
 payment_methods_with_emojis = {
-    "Bitcoin +1%": ("15kkY79cKZgu6yto64tykAQRNNW9EvDop5", "<:bitcoinbtclogo:1210395515133362316>"),
-    "USDT (TRC20) +1%": ("TL9o93JwxMmKtRgQQcqvrmzC5JoUJMF5Cn", "<:R5:1210457644394086421>"),
-    "USDT (Erc20) +1%" : ("0x6da8d7c0c661ae8a214efe261c57e7a52cfd506b" , "<:R5:1210457644394086421>"),
-     "Ethereum  ETH +1%" : ("0x6da8d7c0c661ae8a214efe261c57e7a52cfd506b" , "<:R5:1210457644394086421>"),
-    "Usdt  Solana +1%" : ("Ax9qM8JCd7G74o7g4vEnDk3aNyQCqfVUeb3QD5dn7hAk" , "<:R5:1210457644394086421>"),
-    "Binance to Binance & USDT +2%" : ("461848277", "<:OIP2:1210456498929532948>"),
-    "LiteCoin +1%" :("Lhc4XBb75aEGYmYYq4ZqejXDW4TtsrYhpz" ,"<:1490823:1210457048987467796>"),
+    "Bitcoin +1%": ("15kkY79cKZgu6yto64tykAQRNNW9EvDop5", "<:Bitcoin:1416768698672349355>"),
+    "USDT (TRC20) +1%": ("TL9o93JwxMmKtRgQQcqvrmzC5JoUJMF5Cn", "<:1170181607152427018:1428871132529819869>"),
+    "USDT (Erc20) +1%" : ("0x6da8d7c0c661ae8a214efe261c57e7a52cfd506b" , "<:1170181607152427018:1428871132529819869>"),
+     "Ethereum  ETH +1%" : ("0x6da8d7c0c661ae8a214efe261c57e7a52cfd506b" , "<:1170181607152427018:1428871132529819869>"),
+    "Usdt  Solana +1%" : ("Ax9qM8JCd7G74o7g4vEnDk3aNyQCqfVUeb3QD5dn7hAk" , "<:1170181607152427018:1428871132529819869>"),
+    "Binance to Binance & USDT +2%" : ("461848277", "<:1681906467binancelogotransparent:1434595827866665021>"),
+    "LiteCoin +1%" :("Lhc4XBb75aEGYmYYq4ZqejXDW4TtsrYhpz" ,"<:1170181396736770089:1428871130298581115>"),
     "Solana (Sol)" : ("Ax9qM8JCd7G74o7g4vEnDk3aNyQCqfVUeb3QD5dn7hAk", "<:OIP2:1428501558068252874>")
 }
 
