@@ -1251,12 +1251,13 @@ async def run_skill_calculator(interaction, skill, level_start, level_end):
 
         current_level = target_level
 
-    # Build text for other available methods
+    # --- Build additional methods text (same logic, just showing $ + M) ---
     discount_multiplier = 1 - (discount_percent / 100)
     additional_text = "\n".join([
         f"**<:stats:1416767980112576522>{method['title']}**\n"
         f"<:stats:1416767980112576522> Requires level {method['req']} - {method['gpxp']}gp/xp\n"
-        f"<:Bitcoin:1416768698672349355> **${(((XP_TABLE[level_end] - XP_TABLE[level_start]) * method['gpxp'] / 1_000_000) * discount_multiplier) * exchange_rate:,.2f}**\n"
+        f"<:Bitcoin:1416768698672349355> **${(((XP_TABLE[level_end] - XP_TABLE[level_start]) * method['gpxp'] / 1_000_000) * discount_multiplier) * exchange_rate:,.2f}**"
+        f" │ <:Coins:1416768496020488303> **{((XP_TABLE[level_end] - XP_TABLE[level_start]) * method['gpxp'] / 1_000_000) * discount_multiplier:,.2f}M**"
         for method in skill["methods"]
     ])
 
@@ -1287,7 +1288,8 @@ async def run_skill_calculator(interaction, skill, level_start, level_end):
 
     embed.add_field(
         name=f"**__~Using the cheapest methods available~__**",
-        value=f"<:Bitcoin:1416768698672349355> **${total_usd_cost:,.2f}**",
+        value=f"<:Bitcoin:1416768698672349355> **${total_usd_cost:,.2f}**\n"
+        f"<:Coins:1416768496020488303> **{total_gp_cost:,.2f}M**",
         inline=False,
     )
 
@@ -1335,18 +1337,19 @@ async def run_skill_calculator(interaction, skill, level_start, level_end):
     # --- Send the Embed + Buttons (Ephemeral to User) ---
     await interaction.response.send_message(embed=embed, view=button_view, ephemeral=True)
 
-    # --- Log the use to the log channel ---
+
+    # --- Log identical to original ---
     log_channel = interaction.client.get_channel(1416754787566747710)
     if log_channel:
-        time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         await log_channel.send(
             f"🧾 **Skill Calculator Used**\n"
             f"👤 User: {interaction.user.mention} (`{interaction.user.id}`)\n"
             f"🧠 Skill: **{skill['name']}**\n"
             f"📈 Levels: {level_start} ➜ {level_end}\n"
+            f"💰 Total: ${total_usd_cost:,.2f} / {total_gp_cost:,.2f}M\n"
             f"🕒 Time: `{time_str}`"
         )
-
 
 # List of channel IDs where the bot should react to messages
 CHANNEL_IDS = [
