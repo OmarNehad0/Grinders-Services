@@ -104,8 +104,7 @@ class InfoModal(Modal, title="Provide Your Information"):
 TOS_ROLE_ID = 1434598788995219537  # Role ID to give
 TOS_EMOJI = "✅"  # You can replace this with a custom emoji like <:verify:133420012345678901>
 TOS_CHANNEL_ID = 1434310497909604384  # Optional: set to your TOS channel ID to restrict reaction detection
-db = client["tos_database"]
-tos_collection = db["tos_message"]
+
 
 @bot.command()
 @commands.has_permissions(administrator=True)
@@ -1612,7 +1611,7 @@ client = MongoClient(mongo_uri)
 
 # Choose your database
 db = client['MongoDB']  # Replace with the name of your database
-
+tos_collection = db["tos_message"]
 # Access collections (equivalent to Firestore collections)
 wallets_collection = db['wallets-grinders']
 orders_collection = db['orders-grinders']
