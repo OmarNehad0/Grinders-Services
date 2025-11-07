@@ -1530,7 +1530,7 @@ DINK_CHANNEL_ID = 1416771003681607730  # <-- REPLACE THIS
 
 # ==== Slash Commands ====
 
-@bot.tree.command(name="track_rsn", description="Subscribe this channel to a specific RSN.")
+@bot.tree.command(name="track_rsn-dink", description="Subscribe this channel to a specific RSN.")
 @app_commands.describe(rsn="The RSN to track.")
 async def track_rsn(interaction: discord.Interaction, rsn: str):
     rsn_key = rsn.lower()
@@ -1538,7 +1538,7 @@ async def track_rsn(interaction: discord.Interaction, rsn: str):
     rsn_subscriptions[rsn_key].add(channel_id)
     await interaction.response.send_message(f"✅ This channel is now tracking RSN: `{rsn}`.", ephemeral=True)
 
-@bot.tree.command(name="untrack_rsn", description="Unsubscribe this channel from a specific RSN.")
+@bot.tree.command(name="untrack_rsn-dink", description="Unsubscribe this channel from a specific RSN.")
 @app_commands.describe(rsn="The RSN to stop tracking.")
 async def untrack_rsn(interaction: discord.Interaction, rsn: str):
     rsn_key = rsn.lower()
@@ -1549,7 +1549,7 @@ async def untrack_rsn(interaction: discord.Interaction, rsn: str):
     else:
         await interaction.response.send_message(f"⚠️ This channel was not tracking RSN: `{rsn}`.", ephemeral=True)
 
-@bot.tree.command(name="list_tracked_rsns", description="List all RSNs this channel is tracking.")
+@bot.tree.command(name="list_tracked_rsns-dink", description="List all RSNs this channel is tracking.")
 async def list_tracked_rsns(interaction: discord.Interaction):
     channel_id = interaction.channel_id
     tracked = [rsn for rsn, channels in rsn_subscriptions.items() if channel_id in channels]
@@ -2326,7 +2326,7 @@ async def set_order(interaction: Interaction, customer: discord.Member, value: i
         except Exception as e:
             print(f"Failed to set permissions for {worker.name} in {original_channel.name}: {e}")
 # /complete command
-@bot.tree.command(name="complete", description="Mark an order as completed.")
+@bot.tree.command(name="complete-order", description="Mark an order as completed.")
 async def complete(interaction: Interaction, order_id: int):
     if not has_permission(interaction.user):
         await interaction.response.send_message("❌ You don't have permission to use this command.", ephemeral=True)
