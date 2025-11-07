@@ -1741,7 +1741,12 @@ async def wallet(interaction: discord.Interaction, user: discord.Member = None):
     embed.set_footer(text=f"Requested by {interaction.user.display_name}", icon_url=requester_avatar)
 
     await interaction.response.send_message(embed=embed)
-
+    # ✅ Log the wallet check
+    await log_command(
+        interaction,
+        "wallet",
+        f"Checked wallet of: {user.mention} | Requested by: {interaction.user.mention}"
+    )
 @bot.tree.command(name="add_remove_spent", description="Add or remove spent value from a user's wallet")
 @app_commands.choices(action=[
     discord.app_commands.Choice(name="Add", value="add"),
