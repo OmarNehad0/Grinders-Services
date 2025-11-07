@@ -2610,7 +2610,7 @@ async def select_callback(interaction: discord.Interaction):
 
     # Embed setup
     embed = discord.Embed(
-        title=f"{category_data.get('emoji', '')} {category_data['name']}",
+        title=f"{category_data['name']}",
         description=category_data.get("caption", "No description provided"),
         color=discord.Color.blue()
     )
