@@ -2181,7 +2181,7 @@ def get_next_order_id():
     )
     return counter["seq"]
 
-@bot.tree.command(name="post", description="Post a new order.")
+@bot.tree.command(name="create-order", description="Post a new order.")
 @app_commands.describe(
     customer="The customer for the order",
     value="The value of the order (in millions)",
@@ -2261,7 +2261,7 @@ async def post(interaction: discord.Interaction, customer: discord.Member, value
     else:
         await interaction.response.send_message("Invalid channel specified.", ephemeral=True)
 
-@bot.tree.command(name="set", description="Set an order directly with worker.")
+@bot.tree.command(name="set-order", description="Set an order directly with worker.")
 @app_commands.describe(
     customer="The customer for the order",
     value="The value of the order (in millions)",
@@ -2452,7 +2452,7 @@ async def complete(interaction: Interaction, order_id: int):
      ))
 
 # 📌 /order_deletion command
-@bot.tree.command(name="order_deletion", description="Delete an order.")
+@bot.tree.command(name="cancell-order", description="Delete an order.")
 async def order_deletion(interaction: Interaction, order_id: int):
     if not has_permission(interaction.user):
         await interaction.response.send_message("❌ You don't have permission to use this command.", ephemeral=True)
