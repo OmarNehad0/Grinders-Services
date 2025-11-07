@@ -2266,7 +2266,7 @@ async def post(interaction: discord.Interaction, customer: discord.Member, value
     else:
         await interaction.response.send_message("Invalid channel specified.", ephemeral=True)
 
-@bot.tree.command(name="set-order", description="Set an order directly with worker.")
+@bot.tree.command(name="Create existing order", description="Set an order directly with worker.")
 @app_commands.describe(
     customer="The customer for the order",
     value="The value of the order (in millions)",
