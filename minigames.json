@@ -6,8 +6,12 @@
       "barb",
       "ba"
     ],
-    "caption": "For Any Custom Question Create A Ticket.",
+    "caption":"For Any Custom Question Create A Ticket.",
     "items": [
+      {
+        "name": "Lvl 5 All Roles",
+        "price": 180000000
+      },
       {
         "name": "Torso",
         "price": 50000000
