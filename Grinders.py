@@ -513,7 +513,7 @@ async def pay(ctx):
 
 # List of JSON file paths
 JSON_FILES = [
-    "Yama - Delve.json"و
+    "Yama - Delve.json",
     "MegaScales.json",
     "Chambers Of Xeric.json",
     "Theatre Of Blood.json",
