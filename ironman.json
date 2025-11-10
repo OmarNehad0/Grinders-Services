@@ -521,6 +521,36 @@
       ]
     },
     {
+      "name": "Blood shard",
+      "emoji":"1428886233995542739",
+      "aliases": [
+        "Blood shard"
+      ],
+      "caption": "Those prices assume you have Dodge necklace and Shadow Veil spell.",
+      "items": [
+        {
+          "name": "Vyrewatch - Price Per Kill",
+          "price": 80000
+        },
+        {
+          "name": "82-90 thieving - per pickpocket",
+          "price": 35000
+        },
+        {
+          "name": "90-95 thieving - per pickpocket",
+          "price": 30000
+        },
+        {
+          "name": "95-99 thieving - per pickpocket",
+          "price": 25000
+        },
+        {
+          "name": "99 thieving - per pickpocket",
+          "price": 20000
+        }
+      ]
+    },
+    {
       "name": "Volcanic Ash",
       "emoji":"1062158963061301329",
       "aliases": [
