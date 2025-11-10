@@ -197,7 +197,7 @@
       "Ascent of Arceus ",
       "ascent"
     ],
-    "price": 3000000
+    "price": 5000000
   },
   {
     "name": "At First Light",
@@ -349,7 +349,7 @@
       "Desert Treasure",
       "dtreasure","dt1","dt"
     ],
-    "price": 28000000
+    "price": 25000000
   },
   {
     "name": "Desert Treasure (-43 Pray)",
@@ -655,7 +655,7 @@
       "The Golem",
       "golem"
     ],
-    "price": 600000
+    "price": 6000000
   },
   {
     "name": "The Grand Tree",
@@ -917,7 +917,7 @@
     "aliases": [
       "mep2","mourning ends 2","mourning's ends part 2"
     ],
-    "price": 20000000
+    "price": 2000000
   },
   {
     "name": "Murder Mystery",
@@ -1021,7 +1021,7 @@
       "Priest in Peril",
       "priest"
     ],
-    "price": 400000
+    "price": 4000000
   },
   {
     "name": "The Queen of Thieves",
@@ -1029,7 +1029,7 @@
       "The Queen of Thieves",
       "thieves"
     ],
-    "price": 5600000
+    "price": 5000000
   },
   {
     "name": "The Curse of Arrav",
@@ -1466,30 +1466,6 @@
     "price": 6000000
   },
   {
-    "name": "Shadows of Custodia",
-    "aliases": [
-      "Shadows of Custodia",
-      "soc"
-    ],
-    "price": 7000000
-  },
-  {
-    "name": "Scrambled!",
-    "aliases": [
-      "Scrambled!",
-      "scram"
-    ],
-    "price": 15000000
-  },
-  {
-    "name": "The Final Dawn",
-    "aliases": [
-      "The Final Dawn",
-      "final dawn"
-    ],
-    "price": 25000000
-  },
-  {
     "name": "Tower of Life",
     "aliases": [
       "Tower of Life",
@@ -1623,7 +1599,7 @@
       "Architectural Alliance",
       "arch"
     ],
-    "price": 400000
+    "price": 4000000
   },
   {
     "name": "Bear Your Soul",
