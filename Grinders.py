@@ -513,6 +513,7 @@ async def pay(ctx):
 
 # List of JSON file paths
 JSON_FILES = [
+    "Yama - Delve.json"و
     "MegaScales.json",
     "Chambers Of Xeric.json",
     "Theatre Of Blood.json",
@@ -523,8 +524,7 @@ JSON_FILES = [
     "God Wars Dungeon.json",
     "The Gauntlet.json",
     "Wilderness Bosses.json",
-    "Other Bosses.json",
-    "Yama - Delve.json"
+    "Other Bosses.json"
 ]
 
 # Emoji mapping for each JSON file
@@ -540,7 +540,7 @@ EMOJI_MAP = {
     "Tombs Of Amascuts.json": "🐫 | ",
     "Other Bosses.json": "🦍 | ",
     "MegaScales.json" : "🦄 | ",
-    "Yama - Delve.json": "🪄 | "
+    "Yama - Delve.json": "👣 | "
 }
 
 # Function to load data from a JSON file
