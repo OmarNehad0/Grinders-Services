@@ -329,7 +329,7 @@
         },
         {
           "name": "Blowing Glass",
-          "price": 2500
+          "price": 3500
         },
         {
           "name": "Cannonball Smelt - 35+ Smithing, Steel Bars Banked",
@@ -345,7 +345,7 @@
         },
         {
           "name": "Daeyalt Essence",
-          "price": 700
+          "price": 1000
         },
         {
           "name": "Making Glass - Cost Per Seaweed",
@@ -356,8 +356,8 @@
           "price": 500000
         },
         {
-          "name": "Necklaces & Amulets",
-          "price": 2000
+          "name": "Necklaces & Amulets & rings",
+          "price": 8000
         },
         {
           "name": "Pure Essence",
