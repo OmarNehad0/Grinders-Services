@@ -1846,7 +1846,7 @@ async def check_and_assign_roles(user: discord.Member, spent_value: int, client)
 
 
 # /wallet_add_remove command
-@bot.tree.command(name="wallet_add_remove", description="Add or remove value from a user's wallet")
+@bot.tree.command(name="edit-balance", description="Add or remove value from a user's wallet")
 @app_commands.choices(action=[
     discord.app_commands.Choice(name="Add", value="add"),
     discord.app_commands.Choice(name="Remove", value="remove")
