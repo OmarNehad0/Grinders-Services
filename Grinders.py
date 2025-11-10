@@ -1139,17 +1139,16 @@ def chunk_text(text, max_length=1024):
 # Command to calculate skill costs
 # Command to calculate multiple skills at once
 @bot.command()
+@bot.command()
 async def s(ctx, *, skill_ranges: str):
-    discount_percent = discount_data["percent"]  # Use the global discount
+    discount_percent = discount_data["percent"]
     try:
         total_gp_sum = 0
         total_usd_sum = 0
 
-        # Split multiple skills by comma
         skill_entries = [entry.strip() for entry in skill_ranges.split(",")]
 
         for entry in skill_entries:
-            # Parse skill name and level range
             try:
                 skill_name, levels = entry.split()
                 level_start, level_end = map(int, levels.split("-"))
@@ -1158,39 +1157,27 @@ async def s(ctx, *, skill_ranges: str):
                 continue
 
             if level_start < 1 or level_end > 99 or level_start >= level_end:
-                await ctx.send(f"Invalid level range for '{skill_name}'. Levels must be 1-99 and start < end.")
+                await ctx.send(f"Invalid level range for '{skill_name}'.")
                 continue
 
-            # Find the skill by name or alias
-            skill = None
-            for skill_data in skills_data:
-                if skill_name.lower() == skill_data["name"].lower() or skill_name.lower() in skill_data["aliases"]:
-                    skill = skill_data
-                    break
+            skill = next((s for s in skills_data if skill_name.lower() == s["name"].lower() or skill_name.lower() in s["aliases"]), None)
             if not skill:
                 await ctx.send(f"Skill '{skill_name}' not found.")
                 continue
 
-            # Fetch the dynamic exchange rate
             exchange_rate = current_exchange_rate
-
-            # Calculate cheapest method breakdown
             breakdown = []
             total_gp_cost = 0
             total_usd_cost = 0
             current_level = level_start
 
             while current_level < level_end:
-                valid_methods = [method for method in skill["methods"] if method["req"] <= current_level]
+                valid_methods = [m for m in skill["methods"] if m["req"] <= current_level]
                 if not valid_methods:
                     await ctx.send(f"No valid methods available for {skill_name} at level {current_level}.")
                     break
-
                 cheapest_method = min(valid_methods, key=lambda m: m["gpxp"])
-                next_method_level = min(
-                    (method["req"] for method in skill["methods"] if method["req"] > current_level),
-                    default=level_end,
-                )
+                next_method_level = min((m["req"] for m in skill["methods"] if m["req"] > current_level), default=level_end)
                 target_level = min(next_method_level, level_end)
                 xp_to_next = XP_TABLE[target_level] - XP_TABLE[current_level]
                 discount_multiplier = 1 - (discount_percent / 100)
@@ -1206,7 +1193,6 @@ async def s(ctx, *, skill_ranges: str):
                     "end_level": target_level,
                     "gp_cost": gp_cost,
                     "usd_cost": usd_cost,
-                    "gpxp": cheapest_method["gpxp"],
                 })
 
                 current_level = target_level
@@ -1214,68 +1200,56 @@ async def s(ctx, *, skill_ranges: str):
             total_gp_sum += total_gp_cost
             total_usd_sum += total_usd_cost
 
-            # Build the full embed for the skill
+            # Embed setup
             embed = discord.Embed(
                 title=f"{skill['emoji']} {skill['name']} Calculator",
                 description=f"Requires {XP_TABLE[level_end] - XP_TABLE[level_start]:,} XP",
                 color=discord.Color.from_rgb(139, 0, 0),
             )
-            embed.add_field(name="**__Start Level__**", value=f"**```{level_start}```**", inline=True)
-            embed.add_field(name="**__End Level__**", value=f"**```{level_end}```**", inline=True)
-            embed.add_field(name="**__Discount__**", value=f"**```{discount_percent}%```**", inline=True)
-
+            embed.add_field(name="Start Level", value=f"{level_start}", inline=True)
+            embed.add_field(name="End Level", value=f"{level_end}", inline=True)
+            embed.add_field(name="Discount", value=f"{discount_percent}%", inline=True)
             embed.set_thumbnail(url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif")
             embed.set_footer(text="Grinders Staff", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif")
             embed.set_author(name="Grinders Services", icon_url="https://media.discordapp.net/attachments/1387923748585476236/1428484017711349833/Avatar.gif")
 
             # Cheapest path totals
             embed.add_field(
-                name=f"**__~Using the cheapest methods available~__**",
-                value=f"<:240pxCoins_detail:1416768496020488303> **{total_gp_cost:,.2f}M** "
-                      f"<:Bitcoin:1416768698672349355> **${total_usd_cost:,.2f}**",
+                name="~Using the cheapest methods~",
+                value=f"<:240pxCoins_detail:1416768496020488303> {total_gp_cost:,.2f}M | <:Bitcoin:1416768698672349355> ${total_usd_cost:,.2f}",
                 inline=False,
             )
 
-            # Breakdown of methods
-            breakdown_text = "\n".join([
-                f"{segment['title']} at level {segment['start_level']}-{segment['end_level']} "
-                f"-> <:240pxCoins_detail:1416768496020488303> {segment['gp_cost']:.2f}M, "
-                f"<:Bitcoin:1416768698672349355> ${segment['usd_cost']:.2f}"
-                for segment in breakdown
-            ])
-            embed.add_field(name="**This will consist of the following methods:**", value=breakdown_text, inline=False)
+            # Breakdown text (chunked)
+            breakdown_text = "\n".join([f"{b['title']} {b['start_level']}-{b['end_level']} -> <:240pxCoins_detail:1416768496020488303> {b['gp_cost']:.2f}M, <:Bitcoin:1416768698672349355> ${b['usd_cost']:.2f}" for b in breakdown])
+            breakdown_chunks = chunk_text(breakdown_text)
+            for i, chunk in enumerate(breakdown_chunks):
+                embed.add_field(name="Methods Breakdown" if i == 0 else "\u200b", value=chunk, inline=False)
 
-            # Alternative full method costs
-            additional_text = "\n".join([
-                f"**<:Unnamed_29:1416767980112576522>{method['title']}**\n"
-                f"<:Unnamed_29:1416767980112576522> Requires level {method['req']} - {method['gpxp']}gp/xp\n"
-                f"<:240pxCoins_detail:1416768496020488303> **{round(((XP_TABLE[level_end] - XP_TABLE[level_start]) * method['gpxp'] / 1_000_000) * discount_multiplier)}m** "
-                f"<:Bitcoin:1416768698672349355> **${(((XP_TABLE[level_end] - XP_TABLE[level_start]) * method['gpxp'] / 1_000_000) * discount_multiplier) * exchange_rate:,.2f}** \n"
-                for method in skill["methods"]
+            # Alternative method costs (chunked)
+            alt_text = "\n".join([
+                f"**{m['title']}** requires {m['req']} -> <:240pxCoins_detail:1416768496020488303> {round(((XP_TABLE[level_end]-XP_TABLE[level_start])*m['gpxp']/1_000_000)*discount_multiplier)}M | <:Bitcoin:1416768698672349355> ${round(((XP_TABLE[level_end]-XP_TABLE[level_start])*m['gpxp']/1_000_000)*discount_multiplier*exchange_rate,2)}"
+                for m in skill["methods"]
             ])
-            chunks = chunk_text(additional_text)
-            embed.add_field(name="**__Alternatively, if you want to choose a specific method__**", value=chunks[0], inline=False)
-            for chunk in chunks[1:]:
-                embed.add_field(name="", value=chunk, inline=False)
+            alt_chunks = chunk_text(alt_text)
+            for i, chunk in enumerate(alt_chunks):
+                embed.add_field(name="Alternative Methods" if i == 0 else "\u200b", value=chunk, inline=False)
 
             # Optional notes
             if skill.get("caption"):
-                embed.add_field(name="**Notes**", value=skill["caption"], inline=False)
+                embed.add_field(name="Notes", value=skill["caption"], inline=False)
 
-            # Send the skill embed
             await ctx.send(embed=embed)
 
             # Buttons
             button_view = discord.ui.View(timeout=None)
             ticket_link = "https://discord.com/channels/1414948143250018307/1416764157298085888"
             voucher_link = "https://www.sythe.org/threads/grinders-service-vouches/"
-            ticket_button = discord.ui.Button(label="🎟️ Open a Ticket - Click Here", url=ticket_link, style=discord.ButtonStyle.url)
-            voucher_button = discord.ui.Button(label="Our Sythe Vouches", url=voucher_link, style=discord.ButtonStyle.url, emoji=discord.PartialEmoji(name="sytheicon", id=1416769474618458193))
-            button_view.add_item(ticket_button)
-            button_view.add_item(voucher_button)
+            button_view.add_item(discord.ui.Button(label="🎟️ Open a Ticket", url=ticket_link, style=discord.ButtonStyle.url))
+            button_view.add_item(discord.ui.Button(label="Our Sythe Vouches", url=voucher_link, style=discord.ButtonStyle.url, emoji=discord.PartialEmoji(name="sytheicon", id=1416769474618458193)))
             await ctx.send(view=button_view)
 
-        # Final summary embed
+        # Final summary
         summary_embed = discord.Embed(
             title="💰 Total Cost for All Skills",
             description="Sum of cheapest paths for all requested skills",
@@ -1287,6 +1261,7 @@ async def s(ctx, *, skill_ranges: str):
 
     except Exception as e:
         await ctx.send(f"Error calculating skills: {e}")
+
 
         
 # --- Buttons view: show all skills ---
