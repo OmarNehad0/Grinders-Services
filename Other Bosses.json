@@ -33,12 +33,12 @@
       "caption": "Prices below are per kill.\nUpcharges may apply based on supplies.\nYou keep all loot.",
       "items": [
         {
-          "name": "Alchemical Hydra - Twisted Bow or Bowfa or Dragonhunter Lance",
+          "name": "Alchemical Hydra - Twisted Bow",
           "price": 800000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Alchemical_Hydra_%28serpentine%29.png/272px-Alchemical_Hydra_%28serpentine%29.png?925dd"
         },       
         {
-          "name": "Alchemical Hydra - Toxic Blowpipe (BP)",
+          "name": "Alchemical Hydra -  Bowfa",
           "price": 1000000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Alchemical_Hydra_%28serpentine%29.png/272px-Alchemical_Hydra_%28serpentine%29.png?925dd"
         }
@@ -286,7 +286,7 @@
         },
         {
           "name": "Shamans - w/ MSB/Cannon",
-          "price": 17000,
+          "price": 170000,
           "image" : "https://oldschool.runescape.wiki/images/thumb/Dragon_warhammer_detail.png/120px-Dragon_warhammer_detail.png?7f65a"
         }
                ],
@@ -381,6 +381,61 @@
         }
                ],
           "emoji" : "<:200pxZalcano:1321226133345144937>"
+       },
+     {
+      "name": "amoxilatl",
+      "aliases": [
+        "amoxilatl"
+      ],
+      "caption": "Prices below are per kill.\nUpcharges may apply based on supplies.\nYou keep all loot.",
+      "items": [
+        {
+          "name": "Amoxilatl",
+          "price": 700000,
+          "image" : "https://oldschool.runescape.wiki/images/thumb/Amoxliatl.png/180px-Amoxliatl.png?01b12"
+        }
+               ],
+          "emoji" : "<:Amoxliatl:1332732124087713882>"
+       },
+     {
+      "name": "Royal Titans",
+      "aliases": [
+        "royal titan"
+      ],
+      "caption": "Prices below are per kill.\nUpcharges may apply based on supplies.\nYou keep all loot.",
+      "items": [
+        {
+          "name": "Royal Titans - Duo",
+          "price": 1000000,
+          "image" : "https://oldschool.runescape.wiki/images/thumb/Eldric_the_Ice_King.png/220px-Eldric_the_Ice_King.png?6bd48"
+        },
+           {
+          "name": "Royal Titans - Solo",
+          "price": 1500000,
+          "image" : "https://oldschool.runescape.wiki/images/thumb/Eldric_the_Ice_King.png/220px-Eldric_the_Ice_King.png?6bd48"
+        }
+               ],
+          "emoji" : "<:RoyalTitans:1337448135273746465>"
+       },
+     {
+      "name": "Tormented Demon!",
+      "aliases": [
+        "tormented demon","tds"
+      ],
+      "caption": "Prices below are per kill.\nUpcharges may apply based on supplies.\nYou keep all loot.",
+      "items": [
+        {
+          "name": "Tormented Demon - On Task",
+          "price": 1300000,
+          "image" : "https://oldschool.runescape.wiki/images/thumb/Tormented_Demon_%281%29.png/289px-Tormented_Demon_%281%29.png?6c099&20240710094336"
+        },
+           {
+          "name": "Tormented Demon - Off Task",
+          "price": 1600000,
+          "image" : "https://oldschool.runescape.wiki/images/thumb/Tormented_Demon_%281%29.png/289px-Tormented_Demon_%281%29.png?6c099&20240710094336"
+        }
+               ],
+          "emoji" : "<:320pxTormented_Demon_1:1340485096322498633>"
        },
        {
       "name": "Zulrah",
