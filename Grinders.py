@@ -768,7 +768,7 @@ async def start(ctx):
     banner_gif_url = "https://i.postimg.cc/VkgDLqGf/06287b359e873799c131a81bd1995edb.gif"
     await ctx.send(banner_gif_url)
     import io
-    ticket_link = "https://discord.com/channels/1208792946401615893/1208792946883690550"
+    ticket_link = "https://discord.com/channels/1414948143250018307/1416764157298085888"
     voucher_link = "https://www.sythe.org/threads/grinders-service-vouches/"
     
 
@@ -1098,7 +1098,7 @@ async def quest_calculator(ctx, *, quests: str):
     button_view = discord.ui.View(timeout=None)  # Persistent view
 
     # Ticket button with emoji
-    ticket_link = "https://discord.com/channels/1208792946401615893/1208792946883690550"
+    ticket_link = "https://discord.com/channels/1414948143250018307/1416764157298085888"
     voucher_link = "https://www.sythe.org/threads/grinders-service-vouches/"
     ticket_button = discord.ui.Button(
     label="🎟️ Open a Ticket - Click Here",
@@ -1615,7 +1615,7 @@ counters_collection = db["order_counters-grinders"]  # New collection to track o
 # The fixed orders posting channel
 ORDERS_CHANNEL_ID = 1416771302554992700
 # Allowed roles for commands
-ALLOWED_ROLES = {1414948197142495283, 1415051454489825331}
+ALLOWED_ROLES = {1414948197142495283, 1435653535495753789, 1415051454489825331, 1435650102193553448}
 
 def has_permission(user: discord.Member):
     return any(role.id in ALLOWED_ROLES for role in user.roles)
@@ -1690,7 +1690,7 @@ def update_wallet(user_id, field, value):
 async def wallet(interaction: discord.Interaction, user: discord.Member = None):
     # Define role IDs
     self_only_roles = {1414948143250018307, 1416772007089016986} 
-    allowed_roles = {1414948197142495283, 1415051454489825331}
+    allowed_roles = {1414948197142495283, 1435653535495753789, 1415051454489825331, 1435650102193553448}
 
     # Check if user has permission
     user_roles = {role.id for role in interaction.user.roles}
@@ -2490,7 +2490,7 @@ async def order_deletion(interaction: Interaction, order_id: int):
 @bot.tree.command(name="view_order", description="View details of an order")
 async def view_order(interaction: discord.Interaction, order_id: int):
     # Required role IDs
-    allowed_roles = {1414948197142495283, 1415051454489825331, 1414948529469653083}
+    allowed_roles = {1414948197142495283, 1435653535495753789, 1415051454489825331, 1435650102193553448}
 
     # Check if user has at least one of the required roles
     if not any(role.id in allowed_roles for role in interaction.user.roles):
