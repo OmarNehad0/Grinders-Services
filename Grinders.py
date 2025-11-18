@@ -121,14 +121,18 @@ def create_paginated_embeds(quest_data, title):
 
     lines = []
     for q in quest_data:
-        price_m = q.get("price", 0)  # in millions
-        price_usd = price_to_usd(price_m)
+        price_gp = q.get("price", 0)  # raw GP
+        price_m = price_gp / 1_000_000  # convert to millions
+        price_usd = price_to_usd(price_gp)  # existing conversion function
         desc = q.get("description", "No description")
+        note = q.get("note", "No notes")
+
         lines.append(
             f"```css\n"
             f"🪄 {q['name']}\n"
-            f"💵 Price: {price_m}m | ${price_usd:,.2f}\n"
+            f"💵 Price: {price_m:.2f}m | ${price_usd:,.2f}\n"
             f"📝 {desc}\n"
+            f"💡 Note: {note}\n"
             f"```"
         )
 
@@ -151,6 +155,7 @@ def create_paginated_embeds(quest_data, title):
         embeds.append(embed)
 
     return embeds
+
 
 
 # ----------------- PAGINATOR -----------------
