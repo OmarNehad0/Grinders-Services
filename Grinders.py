@@ -58,6 +58,173 @@ intents.members = True
 # Create bot instance with intents
 bot = commands.Bot(command_prefix="!", intents=intents)
 
+
+# ----------------- QUEST JSON LOADING -----------------
+def load_quests_from_file(file_path):
+    if not os.path.exists(file_path):
+        return []
+    with open(file_path, "r", encoding="utf-8") as f:
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            return []
+
+MEMBER_QUESTS = load_quests_from_file("quests-members.json")
+OTHER_QUESTS = load_quests_from_file("Mini-Quests.json") + load_quests_from_file("Free-Quests.json")
+
+def get_first_letter(quest_name):
+    """
+    Returns the first letter used for filtering.
+    Skips 'The ' but not 'A '.
+    """
+    quest_name = quest_name.strip()
+    if quest_name.lower().startswith("the "):
+        quest_name = quest_name[4:]  # skip 'The '
+    return quest_name[0].upper() if quest_name else ""
+
+def get_quests_by_range(range_id):
+    """
+    Filter only member quests by first letter.
+    Mini & Free quests are returned separately via dropdown selection, not appended.
+    """
+    if range_id in ["AF", "GL", "MR", "SZ"]:
+        if not MEMBER_QUESTS:
+            return []
+        range_map = {
+            "AF": "ABCDEF",
+            "GL": "GHIJKL",
+            "MR": "MNOPQR",
+            "SZ": "STUVWXYZ"
+        }
+        letters = range_map[range_id]
+        return [q for q in MEMBER_QUESTS if get_first_letter(q["name"]) in letters]
+
+    elif range_id == "MINI":
+        return load_quests_from_file("Mini-Quests.json")  # unfiltered
+
+    elif range_id == "FREE":
+        return load_quests_from_file("Free-Quests.json")  # unfiltered
+
+    else:
+        return []
+
+
+def price_to_usd(value):
+    return (value / 1_000_000) * 0.2  # 1M = $0.2
+
+
+# ----------------- EMBED CREATION -----------------
+# ----------------- EMBED CREATION -----------------
+def create_paginated_embeds(quest_data, title):
+    if not quest_data:
+        return [discord.Embed(title=title, description="No quests found.", color=discord.Color.red())]
+
+    lines = []
+    for q in quest_data:
+        price_m = q.get("price", 0)  # in millions
+        price_usd = price_to_usd(price_m)
+        desc = q.get("description", "No description")
+        lines.append(
+            f"```css\n"
+            f"🪄 {q['name']}\n"
+            f"💵 Price: {price_m}m | ${price_usd:,.2f}\n"
+            f"📝 {desc}\n"
+            f"```"
+        )
+
+    # Chunk by 1024 character limit per field
+    chunks = []
+    current_chunk = ""
+    for line in lines:
+        if len(current_chunk) + len(line) + 1 > 1024:
+            chunks.append(current_chunk)
+            current_chunk = line
+        else:
+            current_chunk = current_chunk + "\n" + line if current_chunk else line
+    if current_chunk:
+        chunks.append(current_chunk)
+
+    embeds = []
+    for i, chunk_text in enumerate(chunks, start=1):
+        embed = discord.Embed(title=title, color=discord.Color.from_rgb(139, 0, 0))
+        embed.add_field(name=f"Page {i}/{len(chunks)}", value=chunk_text, inline=False)
+        embeds.append(embed)
+
+    return embeds
+
+
+# ----------------- PAGINATOR -----------------
+class QuestPaginator(discord.ui.View):
+    def __init__(self, pages):
+        super().__init__(timeout=None)
+        self.pages = pages
+        self.current_page = 0
+
+    @discord.ui.button(label="⬅️ Previous", style=discord.ButtonStyle.secondary)
+    async def previous(self, interaction, button):
+        if self.current_page > 0:
+            self.current_page -= 1
+        await interaction.response.edit_message(embed=self.pages[self.current_page], view=self)
+
+    @discord.ui.button(label="Next ➡️", style=discord.ButtonStyle.secondary)
+    async def next(self, interaction, button):
+        if self.current_page < len(self.pages) - 1:
+            self.current_page += 1
+        await interaction.response.edit_message(embed=self.pages[self.current_page], view=self)
+
+# ----------------- DROPDOWN -----------------
+QUEST_EMOJI_ID = 1416769923312652299
+
+class QuestDropdown(discord.ui.Select):
+    def __init__(self):
+        options = [
+            discord.SelectOption(label="A - F", value="AF", emoji=discord.PartialEmoji(name="130pxQuests", id=QUEST_EMOJI_ID)),
+            discord.SelectOption(label="G - L", value="GL", emoji=discord.PartialEmoji(name="130pxQuests", id=QUEST_EMOJI_ID)),
+            discord.SelectOption(label="M - R", value="MR", emoji=discord.PartialEmoji(name="130pxQuests", id=QUEST_EMOJI_ID)),
+            discord.SelectOption(label="S - Z", value="SZ", emoji=discord.PartialEmoji(name="130pxQuests", id=QUEST_EMOJI_ID)),
+            discord.SelectOption(label="Mini Quests", value="MINI", emoji=discord.PartialEmoji(name="130pxQuests", id=QUEST_EMOJI_ID)),
+            discord.SelectOption(label="Free Quests", value="FREE", emoji=discord.PartialEmoji(name="130pxQuests", id=QUEST_EMOJI_ID)),
+        ]
+        super().__init__(placeholder="🕵️ Quests ", min_values=1, max_values=1, options=options)
+
+    async def callback(self, interaction):
+        category = self.values[0]
+
+        if category in ["AF", "GL", "MR", "SZ"]:
+            quests = get_quests_by_range(category)  # filtered member quests only
+        elif category == "MINI":
+            quests = load_quests_from_file("Mini-Quests.json")  # unfiltered
+        elif category == "FREE":
+            quests = load_quests_from_file("Free-Quests.json")  # unfiltered
+        else:
+            quests = []
+
+        # Log usage
+        log_channel = interaction.client.get_channel(1416754787566747710)
+        if log_channel:
+            await log_channel.send(f"User {interaction.user} used Quest Menu for {category} at {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}")
+
+        if not quests:
+            await interaction.response.send_message("No quests found for this category.", ephemeral=True)
+            return
+
+        pages = create_paginated_embeds(quests, f"Quests {category}")
+        view = QuestPaginator(pages)
+        await interaction.response.send_message(embed=pages[0], view=view, ephemeral=True)
+
+
+class QuestCategoryDropdown(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.add_item(QuestDropdown())
+
+# ----------------- COMMAND -----------------
+@bot.command(name="quest-menu")
+async def quests_dropdown(ctx):
+    view = QuestCategoryDropdown()
+    await ctx.send(view=view)
+
+
 LOG_CHANNEL_ID = 1416754787566747710
 
 class InfoModal(Modal, title="Provide Your Information"):
