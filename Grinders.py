@@ -1611,7 +1611,7 @@ tos_collection = db["tos_message"]
 wallets_collection = db['wallets-grinders']
 orders_collection = db['orders-grinders']
 counters_collection = db["order_counters-grinders"]  # New collection to track order ID
-
+ 
 # The fixed orders posting channel
 ORDERS_CHANNEL_ID = 1416771302554992700
 # Allowed roles for commands
