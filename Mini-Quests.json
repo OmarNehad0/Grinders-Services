@@ -1,0 +1,128 @@
+[{
+    "name": "Alfred Barcrawl",
+    "aliases": [
+      "Alfred Barcrawl",
+      "alfred"
+    ],
+    "price": 5000000
+  },
+  {
+    "name": "Architectural Alliance",
+    "aliases": [
+      "Architectural Alliance",
+      "arch"
+    ],
+    "price": 4000000
+  },
+  {
+    "name": "Bear Your Soul",
+    "aliases": [
+      "Bear Your Soul",
+      "bear"
+    ],
+    "price": 6000000
+  },
+  {
+    "name": "Curse of the empty Lord",
+    "aliases": [
+      "Curse of the empty Lord",
+      "curse"
+    ],
+    "price": 15000000
+  },
+  {
+    "name": "Enchanted Key",
+    "aliases": [
+      "Enchanted Key",
+      "enchanted"
+    ],
+    "price": 15000000
+  },
+  {
+    "name": "Enter The Abyss",
+    "aliases": [
+      "Enter The Abyss",
+      "abyss"
+    ],
+    "price": 3000000
+  },
+  {
+    "name": "Family Pest",
+    "aliases": [
+      "Family Pest",
+      "pest"
+    ],
+    "price": 5000000
+  },
+  {
+    "name": "The General's Shadow",
+    "aliases": [
+      "The General's Shadow",
+      "thegeneral"
+    ],
+    "price": 9000000
+  },
+  {
+    "name": "Hopespear's Will",
+    "aliases": [
+      "Hopespear's Will",
+      "hopespear"
+    ],
+    "price": 8000000
+  },
+  {
+    "name": "Lair of Tarn",
+    "aliases": [
+      "Lair of Tarn",
+      "tarn"
+    ],
+    "price": 6000000
+  },
+  {
+    "name": "Skippy and the Morges",
+    "aliases": [
+      "Skippy and the Morges",
+      "skippy"
+    ],
+    "price": 3000000
+  },
+  {
+    "name": "Morges Hat Hunt",
+    "aliases": [
+      "Morges Hat Hunt",
+      "mogrehat"
+    ],
+    "price": 4000000
+  },
+  {
+    "name": "Morges Flippers Hunt",
+    "aliases": [
+      "Morges Flippers Hunt",
+      "mogreflipp"
+    ],
+    "price": 5600000
+  },
+  {
+    "name": "Search of Knowledge",
+    "aliases": [
+      "Search of Knowledge",
+      "knowledge"
+    ],
+    "price": 15000000
+  },
+  {
+    "name": "Daddy's Home",
+    "aliases": [
+      "Daddy's Home",
+      "daddy"
+    ],
+    "price": 5000000
+  },
+  {
+    "name": "The Frozen Door",
+    "aliases": [
+      "The Frozen Door",
+      "frozen"
+    ],
+    "price": 20000000
+  }]
