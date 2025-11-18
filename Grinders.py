@@ -131,8 +131,6 @@ def create_paginated_embeds(quest_data, title):
             f"```css\n"
             f"🪄 {q['name']}\n"
             f"💵 Price: {price_m:.2f}m | ${price_usd:,.2f}\n"
-            f"📝 {desc}\n"
-            f"💡 Note: {note}\n"
             f"```"
         )
 
